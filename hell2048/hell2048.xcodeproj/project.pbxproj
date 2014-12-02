@@ -266,6 +266,8 @@
 		0EE897721A2C9E1D007F7251 /* cpVect.c in Sources */ = {isa = PBXBuildFile; fileRef = 0EE897711A2C9E1D007F7251 /* cpVect.c */; };
 		0EE897791A2C9E1D007F7251 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EE897781A2C9E1D007F7251 /* AppDelegate.cpp */; };
 		0EE8977C1A2C9E1D007F7251 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8977B1A2C9E1D007F7251 /* HelloWorldScene.cpp */; };
+		0EE897851A2E03C8007F7251 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EE897831A2E03C8007F7251 /* Default-568h@2x.png */; };
+		0EE897861A2E03C8007F7251 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EE897841A2E03C8007F7251 /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -832,6 +834,9 @@
 		0EE897781A2C9E1D007F7251 /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		0EE8977A1A2C9E1D007F7251 /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
 		0EE8977B1A2C9E1D007F7251 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
+		0EE897821A2E01DA007F7251 /* AppMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppMacros.h; path = Classes/AppMacros.h; sourceTree = "<group>"; };
+		0EE897831A2E03C8007F7251 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
+		0EE897841A2E03C8007F7251 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -902,6 +907,8 @@
 		0EE894151A2C9E18007F7251 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0EE897831A2E03C8007F7251 /* Default-568h@2x.png */,
+				0EE897841A2E03C8007F7251 /* Default@2x.png */,
 				0EE894161A2C9E18007F7251 /* CloseNormal.png */,
 				0EE894181A2C9E18007F7251 /* CloseSelected.png */,
 				0EE8941A1A2C9E18007F7251 /* Default.png */,
@@ -1978,6 +1985,7 @@
 			children = (
 				0EE897771A2C9E1D007F7251 /* AppDelegate.h */,
 				0EE897781A2C9E1D007F7251 /* AppDelegate.cpp */,
+				0EE897821A2E01DA007F7251 /* AppMacros.h */,
 				0EE8977A1A2C9E1D007F7251 /* HelloWorldScene.h */,
 				0EE8977B1A2C9E1D007F7251 /* HelloWorldScene.cpp */,
 			);
@@ -2044,12 +2052,14 @@
 				0EE894171A2C9E18007F7251 /* CloseNormal.png in Resources */,
 				0EE894231A2C9E18007F7251 /* Icon-Small.png in Resources */,
 				0EE8941F1A2C9E18007F7251 /* Icon-72.png in Resources */,
+				0EE897851A2E03C8007F7251 /* Default-568h@2x.png in Resources */,
 				0EE8941D1A2C9E18007F7251 /* HelloWorld.png in Resources */,
 				0EE894211A2C9E18007F7251 /* Icon-Small-50.png in Resources */,
 				0EE8942B1A2C9E18007F7251 /* iTunesArtwork in Resources */,
 				0EE894251A2C9E18007F7251 /* Icon-Small@2x.png in Resources */,
 				0EE8941B1A2C9E18007F7251 /* Default.png in Resources */,
 				0EE894191A2C9E18007F7251 /* CloseSelected.png in Resources */,
+				0EE897861A2E03C8007F7251 /* Default@2x.png in Resources */,
 				0EE894291A2C9E18007F7251 /* Icon@2x.png in Resources */,
 				0EE896311A2C9E1B007F7251 /* project.pbxproj in Resources */,
 			);
@@ -2439,6 +2449,7 @@
 				0EE897811A2C9E1D007F7251 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
