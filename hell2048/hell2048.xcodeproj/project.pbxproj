@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E033AAB1A2F5049007EA639 /* gameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E033AA91A2F5049007EA639 /* gameScene.cpp */; };
 		0EE894051A2C9E18007F7251 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE894041A2C9E18007F7251 /* QuartzCore.framework */; };
 		0EE894071A2C9E18007F7251 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE894061A2C9E18007F7251 /* OpenGLES.framework */; };
 		0EE894091A2C9E18007F7251 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE894081A2C9E18007F7251 /* OpenAL.framework */; };
@@ -265,12 +266,13 @@
 		0EE897701A2C9E1C007F7251 /* cpSweep1D.c in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8976F1A2C9E1C007F7251 /* cpSweep1D.c */; };
 		0EE897721A2C9E1D007F7251 /* cpVect.c in Sources */ = {isa = PBXBuildFile; fileRef = 0EE897711A2C9E1D007F7251 /* cpVect.c */; };
 		0EE897791A2C9E1D007F7251 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EE897781A2C9E1D007F7251 /* AppDelegate.cpp */; };
-		0EE8977C1A2C9E1D007F7251 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8977B1A2C9E1D007F7251 /* HelloWorldScene.cpp */; };
 		0EE897851A2E03C8007F7251 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EE897831A2E03C8007F7251 /* Default-568h@2x.png */; };
 		0EE897861A2E03C8007F7251 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EE897841A2E03C8007F7251 /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E033AA91A2F5049007EA639 /* gameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gameScene.cpp; path = Classes/gameScene.cpp; sourceTree = "<group>"; };
+		0E033AAA1A2F5049007EA639 /* gameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gameScene.h; path = Classes/gameScene.h; sourceTree = "<group>"; };
 		0EE894011A2C9E18007F7251 /* hell2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hell2048.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE894041A2C9E18007F7251 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0EE894061A2C9E18007F7251 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -832,8 +834,6 @@
 		0EE897751A2C9E1D007F7251 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		0EE897771A2C9E1D007F7251 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		0EE897781A2C9E1D007F7251 /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
-		0EE8977A1A2C9E1D007F7251 /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
-		0EE8977B1A2C9E1D007F7251 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
 		0EE897821A2E01DA007F7251 /* AppMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppMacros.h; path = Classes/AppMacros.h; sourceTree = "<group>"; };
 		0EE897831A2E03C8007F7251 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
 		0EE897841A2E03C8007F7251 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
@@ -1983,11 +1983,11 @@
 		0EE897761A2C9E1D007F7251 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0E033AA91A2F5049007EA639 /* gameScene.cpp */,
+				0E033AAA1A2F5049007EA639 /* gameScene.h */,
 				0EE897771A2C9E1D007F7251 /* AppDelegate.h */,
 				0EE897781A2C9E1D007F7251 /* AppDelegate.cpp */,
 				0EE897821A2E01DA007F7251 /* AppMacros.h */,
-				0EE8977A1A2C9E1D007F7251 /* HelloWorldScene.h */,
-				0EE8977B1A2C9E1D007F7251 /* HelloWorldScene.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2178,6 +2178,7 @@
 				0EE894711A2C9E19007F7251 /* ccFPSImages.c in Sources */,
 				0EE895221A2C9E1A007F7251 /* CCParticleSystemQuad.cpp in Sources */,
 				0EE894491A2C9E19007F7251 /* CCActionGrid3D.cpp in Sources */,
+				0E033AAB1A2F5049007EA639 /* gameScene.cpp in Sources */,
 				0EE897501A2C9E1C007F7251 /* cpSlideJoint.c in Sources */,
 				0EE8954C1A2C9E1A007F7251 /* CCEGLView.mm in Sources */,
 				0EE8968C1A2C9E1B007F7251 /* CCControlButton.cpp in Sources */,
@@ -2250,7 +2251,6 @@
 				0EE8960D1A2C9E1B007F7251 /* CCTMXXMLParser.cpp in Sources */,
 				0EE8948E1A2C9E19007F7251 /* CCObject.cpp in Sources */,
 				0EE8943D1A2C9E19007F7251 /* CCActionCamera.cpp in Sources */,
-				0EE8977C1A2C9E1D007F7251 /* HelloWorldScene.cpp in Sources */,
 				0EE895BD1A2C9E1A007F7251 /* CCProfiling.cpp in Sources */,
 				0EE894F81A2C9E19007F7251 /* CCScene.cpp in Sources */,
 				0EE895FA1A2C9E1B007F7251 /* CCTexturePVR.cpp in Sources */,
