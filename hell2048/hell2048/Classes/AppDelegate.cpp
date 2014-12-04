@@ -92,7 +92,6 @@ bool AppDelegate::applicationDidFinishLaunching()
     
     */
     
-    
     // turn on display FPS
     pDirector->setDisplayStats(false);
 
@@ -101,7 +100,6 @@ bool AppDelegate::applicationDidFinishLaunching()
 
     // create a scene. it's an autorelease object
     CCScene *pScene = game2048::scene();
-  //  CCScene *pScene = HelloWorld::scene();
 
     // run
     pDirector->runWithScene(pScene);

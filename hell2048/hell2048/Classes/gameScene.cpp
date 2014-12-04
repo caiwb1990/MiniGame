@@ -82,8 +82,6 @@ void game2048::ccTouchEnded(cocos2d::CCTouch *touch, cocos2d::CCEvent *unused_ev
             swipeUp();
         }
     }
-    
-    
 }
 
 bool game2048::swipeUp()
