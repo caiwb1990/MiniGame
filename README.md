@@ -1,8 +1,7 @@
-MiniGame_2048
+MiniGame
 =============
 
-2048 game write by 2dx
-
+some minigame write by 2dx
 
 What is this repository for?
 Quick summary
