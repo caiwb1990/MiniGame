@@ -1,45 +1,45 @@
 #ifndef __GAME_CONSTANTS_H__
 #define __GAME_CONSTANTS_H__
 
-typedef enum 
+typedef enum
 {
-	kDown =  0,//ÏòÏÂ·½Ïò
-	kLeft = 1,//Ïò×ó·½Ïò
-	kRight= 2,//ÏòÓÒ·½Ïò
-	kUp = 3,//ÏòÉÏ·½Ïò
+	kDown =  0,//å‘ä¸‹æ–¹å‘
+	kLeft = 1,//å‘å·¦æ–¹å‘
+	kRight= 2,//å‘å³æ–¹å‘
+	kUp = 3,//å‘ä¸Šæ–¹å‘
 	kNormal,
-} HeroDirection;//ÓÂÊ¿·½Ïò
+} HeroDirection;//å‹‡å£«æ–¹å‘
 
 typedef enum
 {
-	kNone = 1,//¿ÉÒÔÍ¨ĞĞ
-	kWall,//Ç½
-	kEnemy,//µĞÈË
-	kItem,//ÎïÆ·
-	kDoor,//ÃÅ
+	kNone = 1,//å¯ä»¥é€šè¡Œ
+	kWall,//å¢™
+	kEnemy,//æ•Œäºº
+	kItem,//ç‰©å“
+	kDoor,//é—¨
 	kNPC,//npc
-	kTeleport,//´«ËÍµã
-} CollisionType;//Åö×²ÀàĞÍ
+	kTeleport,//ä¼ é€ç‚¹
+} CollisionType;//ç¢°æ’ç±»å‹
 
 typedef enum
 {
-	aDown = 0,//ÏòÏÂĞĞ×ß¶¯»­
-	aLeft,//Ïò×óĞĞ×ß¶¯»­
-	aRight,//ÏòÓÒĞĞ×ß¶¯»­
-	aUp,//ÏòÉÏĞĞ×ß¶¯»­
-	aFight,//µ¶¹â¶¯»­
-} AnimationKey;//¶¯»­Ä£°æ¼üÖµ
+	aDown = 0,//å‘ä¸‹è¡Œèµ°åŠ¨ç”»
+	aLeft,//å‘å·¦è¡Œèµ°åŠ¨ç”»
+	aRight,//å‘å³è¡Œèµ°åŠ¨ç”»
+	aUp,//å‘ä¸Šè¡Œèµ°åŠ¨ç”»
+	aFight,//åˆ€å…‰åŠ¨ç”»
+} AnimationKey;//åŠ¨ç”»æ¨¡ç‰ˆé”®å€¼
 
-enum 
+enum
 {
-	kZMap = 0,//µØÍ¼µÄzOrder
+	kZMap = 0,//åœ°å›¾çš„zOrder
 	kZNPC,
 	kZTeleport,
-	kZHero,//ÓÂÊ¿¾«ÁéµÄzOrder
-	kZTip,//ÌáÊ¾ĞÅÏ¢µÄzOrder
-};//GameLayerÖĞ¸÷²¿·ÖµÄÏÔÊ¾zOrder¼°tag
+	kZHero,//å‹‡å£«ç²¾çµçš„zOrder
+	kZTip,//æç¤ºä¿¡æ¯çš„zOrder
+};//GameLayerä¸­å„éƒ¨åˆ†çš„æ˜¾ç¤ºzOrderåŠtag
 
-enum 
+enum
 {
 	kGameLayer = 0,
 	kControlLayer,
