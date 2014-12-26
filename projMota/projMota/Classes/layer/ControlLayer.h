@@ -5,7 +5,7 @@
 
 USING_NS_CC;
 
-class ControlLayer : public Layer
+class ControlLayer : public CCLayer
 {
 public:
 	ControlLayer(void);
@@ -17,10 +17,10 @@ public:
 	CREATE_FUNC(ControlLayer);
     
 	//方向按钮点击事件的回调
-	void menuCallBackMove(cocos2d::Ref* pSender);
+	void menuCallBackMove(CCObject* pSender);
     
 	//关闭按钮点击事件的回调
-	void menuCloseCallback(cocos2d::Ref* pSender);
+	void menuCloseCallback(CCObject* pSender);
 };
 
 #endif

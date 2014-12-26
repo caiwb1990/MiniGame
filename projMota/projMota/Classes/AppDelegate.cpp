@@ -14,9 +14,6 @@
 
 #include "AppMacros.h"
 
-#include <vector>
-#include <string>
-
 #include "MTGame.h"
 
 USING_NS_CC;
@@ -106,7 +103,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     sAnimationMgr->initAnimationMap();
     
     // create a scene. it's an autorelease object
-    CCScene *pScene = GameScene::create()();
+    CCScene *pScene = GameScene::create();
 
     // run
     pDirector->runWithScene(pScene);

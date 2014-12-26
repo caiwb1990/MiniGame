@@ -5,7 +5,7 @@
 
 USING_NS_CC;
 
-class Teleport : public Ref
+class Teleport : public CCObject
 {
 public:
 	Teleport(const ValueMap &dict, int x, int y);
@@ -13,10 +13,10 @@ public:
 	~Teleport(void);
     
 	//传送点所在位置
-	Point tileCoord;
+	CCPoint tileCoord;
     
 	//传送到目标层后，勇士所在坐标
-	Point heroTileCoord;
+	CCPoint heroTileCoord;
     
 	//目标地图的层数
 	int targetMap;
@@ -27,6 +27,6 @@ public:
 	//图片纹理的文件路径
 	std::string imagePath;
     
-	Sprite *teleportSprite;
+	CCSprite *teleportSprite;
 };
 #endif

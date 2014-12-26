@@ -9,14 +9,14 @@ class NPC;
 class Teleport;
 
 //继承自CCTMXTIledMap
-class GameMap : public TMXTiledMap
+class GameMap : public CCTMXTiledMap
 {
 	//只读变量，获取各图层CC_PROPERTY_READONLY
-	CC_SYNTHESIZE(TMXLayer*, floorLayer, FloorLayer);
-	CC_SYNTHESIZE(TMXLayer*, wallLayer, WallLayer);
-	CC_SYNTHESIZE(TMXLayer*, enemyLayer, EnemyLayer);
-	CC_SYNTHESIZE(TMXLayer*, itemLayer, ItemLayer);
-	CC_SYNTHESIZE(TMXLayer*, doorLayer, DoorLayer);
+	CC_SYNTHESIZE(CCTMXLayer*, floorLayer, FloorLayer);
+	CC_SYNTHESIZE(CCTMXLayer*, wallLayer, WallLayer);
+	CC_SYNTHESIZE(CCTMXLayer*, enemyLayer, EnemyLayer);
+	CC_SYNTHESIZE(CCTMXLayer*, itemLayer, ItemLayer);
+	CC_SYNTHESIZE(CCTMXLayer*, doorLayer, DoorLayer);
     
 public:
 	GameMap(void);
@@ -26,14 +26,14 @@ public:
 	static GameMap* gameMapWithTMXFile(const char *tmxFile);
     
 	//TiledMap和cocos2d-x坐标系相互转换的方法
-	Point tileCoordForPosition(Point position);
-	Point positionForTileCoord(Point tileCoord);
-	void showEnemyHitEffect(Point tileCoord);
+	CCPoint tileCoordForPosition(CCPoint position);
+	CCPoint positionForTileCoord(CCPoint tileCoord);
+	void showEnemyHitEffect(CCPoint tileCoord);
     
 	//存放地图上怪物、传送门以及npc
-	Vector<Enemy*> enemyArray;
-	Map<int, Teleport*> teleportDict;
-	Map<int, NPC*> npcDict;
+    std::vector<Enemy*> enemyArray;
+    std::map<int, Teleport*> teleportDict;
+    std::map<int, NPC*> npcDict;
     
 protected:
 	//TiledMap额外的初始化方法
@@ -52,7 +52,7 @@ protected:
 	void updateEnemyAnimation(float time);
     
 	//临时保存战斗时的怪物
-	Sprite* fightingEnemy;
+	CCSprite* fightingEnemy;
     
 	//临时保存打击次数
 	int fightCount;

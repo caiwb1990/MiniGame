@@ -15,19 +15,19 @@ public:
 	bool initAnimationMap();
     
 	//根据名字得到一个动画模板
-	Animation* getAnimation(int key);
+	CCAnimation* getAnimation(int key);
     
 	//创建一个动画实例
-	Animate* createAnimate(int key);
+	CCAnimate* createAnimate(int key);
     
 	//创建一个动画实例
-	Animate* createAnimate(const char* key);
+	CCAnimate* createAnimate(const char* key);
     
 protected:
 	//加载勇士行走动画模版
-	Animation* createHeroMovingAnimationByDirection(HeroDirection direction);
-	Animation* createFightAnimation();
-	Animation* createNPCAnimation();
+	CCAnimation* createHeroMovingAnimationByDirection(HeroDirection direction);
+	CCAnimation* createFightAnimation();
+	CCAnimation* createNPCAnimation();
 };
 
 //定义动画管理器实例的别名

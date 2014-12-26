@@ -8,7 +8,7 @@ USING_NS_CC;
 class Teleport;
 
 //勇士类继承自CCNode
-class Hero : public Node
+class Hero : public CCNode
 {
 public:
 	Hero(void);
@@ -51,28 +51,28 @@ public:
     
 protected:
 	//用于显示勇士形象的精灵
-	Sprite *heroSprite;
+	CCSprite *heroSprite;
 	
 	//临时保存目标的Tilemap坐标
-	Point targetTileCoord;
+	CCPoint targetTileCoord;
 	
 	//临时保存目标的cocos2d-x坐标
-	Point targetPosition;
+	CCPoint targetPosition;
 	
 	//临时保存门起始的图块ID
 	int targetDoorGID;
 	
 	//显示战斗动画的精灵
-	Sprite *fightSprite;
+	CCSprite *fightSprite;
 	
 	//战斗完成后的回调函数
-	void onFightDone(Node* pTarget);
+	void onFightDone(CCNode* pTarget);
 	
 	//碰撞检测方法
-	CollisionType checkCollision(Point heroPosition);
+	CollisionType checkCollision(CCPoint heroPosition);
 	
 	//移动完成后的回调函数
-	void onMoveDone(Node* pTarget, void* data);
+	void onMoveDone(CCNode* pTarget, void* data);
 	
 	//更新开门动画
 	void updateOpenDoorAnimation(float time);

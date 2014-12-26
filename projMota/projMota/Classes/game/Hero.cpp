@@ -12,22 +12,22 @@ Hero::~Hero()
 
 bool Hero::init()
 {
-	if (!Node::init())
+	if (!CCNode::init())
 	{
 		return false;
 	}
     
 	//根据向下行走动画的第一帧创建精灵spriteWithSpriteFrame
-	heroSprite = Sprite::createWithSpriteFrame(sAnimationMgr->getAnimation(kDown)->getFrames().at(0)->getSpriteFrame());
+	heroSprite = CCSprite::createWithSpriteFrame(sAnimationMgr->getAnimation(kDown)->getFrames()->at(0)->getSpriteFrame());
     
 	//设置锚点
-	heroSprite->setAnchorPoint(Point::ZERO);
+	heroSprite->setAnchorPoint(CCPointZero);
     
 	//将用于显示的heroSprite加到自己的节点下
 	this->addChild(heroSprite);
     
 	//创建空的战斗动画精灵
-	fightSprite = Sprite::create();
+	fightSprite = CCSprite::create();
     
 	this->addChild(fightSprite);
     
@@ -46,22 +46,22 @@ void Hero::move(HeroDirection direction)
 	}
     
 	//移动的距离
-	Point moveByPosition;
+	CCPoint moveByPosition;
     
 	//根据方向计算移动的距离
 	switch (direction)
 	{
         case kDown:
-            moveByPosition = Point(0, -32);
+            moveByPosition = CCPoint(0, -32);
             break;
         case kLeft:
-            moveByPosition = Point(-32, 0);
+            moveByPosition = CCPoint(-32, 0);
             break;
         case kRight:
-            moveByPosition = Point(32, 0);
+            moveByPosition = CCPoint(32, 0);
             break;
         case kUp:
-            moveByPosition = Point(0, 32);
+            moveByPosition = CCPoint(0, 32);
             break;
 	}
     
@@ -84,9 +84,9 @@ void Hero::move(HeroDirection direction)
 	heroSprite->runAction(sAnimationMgr->createAnimate(direction));
     
 	//主体进行位移，结束时调用onMoveDone方法 把方向信息传递给onMoveDone方法
-	Action *action = Sequence::create(
-                                      MoveBy::create(0.20f, moveByPosition),
-                                      CallFuncN::create(CC_CALLBACK_1(Hero::onMoveDone, this, (void*)direction)),
+	CCAction *action = CCSequence::create(
+                                      CCMoveBy::create(0.20f, moveByPosition),
+                                      CCCallFuncN::create(CC_CALLBACK_1(Hero::onMoveDone, this, (void*)direction)),
                                       NULL);
     
 	this->runAction(action);
@@ -94,7 +94,7 @@ void Hero::move(HeroDirection direction)
 	isHeroMoving = true;
 }
 
-void Hero::onMoveDone(Node* pTarget, void* data)
+void Hero::onMoveDone(CCNode* pTarget, void* data)
 {
 	//将void*先转换为int，再从int转换到枚举类型
 	int direction = (int) data;
@@ -105,7 +105,7 @@ void Hero::onMoveDone(Node* pTarget, void* data)
 
 void Hero::setFaceDirection(HeroDirection direction)
 {
-	heroSprite->setTextureRect(Rect(0, 32*direction, 32, 32));
+	heroSprite->setTextureRect(CCRect(0, 32*direction, 32, 32));
 }
 
 //判断碰撞类型

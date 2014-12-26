@@ -4,6 +4,10 @@
 #include "cocos2d.h"
 #include "GameConstants.h"
 
+#include <vector>
+#include <string>
+#include <map>
+
 #include "layer/ControlLayer.h"
 #include "layer/GameLayer.h"
 

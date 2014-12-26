@@ -20,15 +20,15 @@ public:
 	CREATE_FUNC(GameLayer);
     
 	void update(float time);
-	void setSceneScrollPosition(Point position);
+	void setSceneScrollPosition(CCPoint position);
     
 	//显示tip
-	void showTip(const char *tip, Point position);
+	void showTip(const char *tip, CCPoint position);
     
 protected:
 	GameMap *map;
 	Hero *hero;
-	void onShowTipDone(Node* pSender);
+	void onShowTipDone(CCNode* pSender);
 };
 
 #endif

@@ -18,7 +18,7 @@ Global::Global(void)
 	currentLevel = 0;
     
 	//勇士出生位置
-	heroSpawnTileCoord = Point(1, 11);
+	heroSpawnTileCoord = CCPoint(1, 11);
 }
 
 Global::~Global(void)

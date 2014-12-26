@@ -52,26 +52,26 @@ void GameMap::initEnemy()
 	//获取怪物层
 	enemyLayer = this->getLayer("enemy");
     
-	Size s = enemyLayer->getLayerSize();
+	CCSize s = enemyLayer->getLayerSize();
     
 	//遍历enemy层，将存在的怪物保存到数组中
 	for (int x = 0; x < s.width; x++)
 	{
 		for (int y = 0; y < s.height; y++)
 		{
-			int gid = enemyLayer->getTileGIDAt(Point(x, y));
+			int gid = enemyLayer->getTileGIDAt(CCPoint(x, y));
 			if (gid != 0)
 			{
 				Enemy* enemy = new Enemy();
                 
 				//保存怪物坐标
-				enemy->position = Point(x, y);
+				enemy->position = CCPoint(x, y);
                 
 				//保存怪物起始的图块ID
 				enemy->startGID = gid;
                 
 				//添加怪物对象到数组
-				enemyArray.pushBack(enemy);
+				enemyArray.push_back(enemy);
 			}
 		}
 	}
@@ -83,7 +83,7 @@ void GameMap::initEnemy()
 //更新怪物的图块
 void GameMap::updateEnemyAnimation(float time)
 {
-	Vector<Enemy*>::iterator  iter;
+	std::vector<Enemy*>::iterator  iter;
 	Enemy *enemy, *needRemove = NULL;
     
 	//遍历保存所有怪物对象的数组

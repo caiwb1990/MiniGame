@@ -2,10 +2,10 @@
 
 Teleport::Teleport(const ValueMap &dict, int x, int y)
 {
-	Point position = Point(x, y);
+	CCPoint position = CCPoint(x, y);
     
 	//传送点所在的TileMap位置
-	tileCoord = sGlobal->gameMap->tileCoordForPosition(Point(x, y));
+	tileCoord = sGlobal->gameMap->tileCoordForPosition(CCPoint(x, y));
     
 	//得出勇士在目标层的起始位置
 	std::string key = "heroTileCoordX";
@@ -14,7 +14,7 @@ Teleport::Teleport(const ValueMap &dict, int x, int y)
 	key = "heroTileCoordY";
 	int y1 = dict.at(key).asInt();
     
-	heroTileCoord = Point(x1, y1);
+	heroTileCoord = CCPoint(x1, y1);
     
 	//取得目标地图的层数
 	key = "targetMap";
@@ -25,8 +25,8 @@ Teleport::Teleport(const ValueMap &dict, int x, int y)
 	imagePath = dict.at(key).asString();
     
 	//创建用于显示Teleport的精灵
-	teleportSprite = Sprite::create(imagePath);
-	teleportSprite->setAnchorPoint(Point::ZERO);
+	teleportSprite = CCSprite::create(imagePath.c_str());
+	teleportSprite->setAnchorPoint(CCPointZero);
 	teleportSprite->setPosition(position);
 	sGlobal->gameLayer->addChild(teleportSprite, kZTeleport);
 }
