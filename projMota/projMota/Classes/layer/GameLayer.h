@@ -9,22 +9,22 @@ using namespace cocos2d;
 class GameMap;
 class Hero;
 
-class GameLayer : public Layer
+class GameLayer : public CCLayer
 {
 public:
 	GameLayer(void);
 	~GameLayer(void);
-
+    
 	virtual bool init();
-
+    
 	CREATE_FUNC(GameLayer);
-
+    
 	void update(float time);
 	void setSceneScrollPosition(Point position);
-
-	//ÏÔÊ¾tip
+    
+	//æ˜¾ç¤ºtip
 	void showTip(const char *tip, Point position);
-
+    
 protected:
 	GameMap *map;
 	Hero *hero;

@@ -5,23 +5,23 @@ DECLARE_SINGLETON_MEMBER(Global);
 Global::Global(void)
 {
 	gameScene = NULL;
-
+    
 	gameLayer = NULL;
-
+    
 	controlLayer = NULL;
-
+    
 	gameMap = NULL;
-
+    
 	hero = NULL;
-
-	//ĞÂÓÎÏ·£¬µ±Ç°µØÍ¼²ãÊıÎª0
+    
+	//æ–°æ¸¸æˆï¼Œå½“å‰åœ°å›¾å±‚æ•°ä¸º0
 	currentLevel = 0;
-
-	//ÓÂÊ¿³öÉúÎ»ÖÃ
+    
+	//å‹‡å£«å‡ºç”Ÿä½ç½®
 	heroSpawnTileCoord = Point(1, 11);
 }
 
 Global::~Global(void)
 {
-
+    
 }

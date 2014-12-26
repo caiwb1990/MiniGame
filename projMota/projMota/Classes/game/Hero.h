@@ -7,74 +7,74 @@ USING_NS_CC;
 
 class Teleport;
 
-//ÓÂÊ¿Àà¼Ì³Ğ×ÔCCNode
+//å‹‡å£«ç±»ç»§æ‰¿è‡ªCCNode
 class Hero : public Node
 {
 public:
 	Hero(void);
 	~Hero(void);
-
-	//³õÊ¼»¯·½·¨
+    
+	//åˆå§‹åŒ–æ–¹æ³•
 	bool init();
-
+    
 	CREATE_FUNC(Hero);
-
-	//ÈÃÓÂÊ¿ÏòÖ¸¶¨·½ÏòÒÆ¶¯Ò»¸ñ
+    
+	//è®©å‹‡å£«å‘æŒ‡å®šæ–¹å‘ç§»åŠ¨ä¸€æ ¼
 	void move(HeroDirection direction);
-
-	//ÉèÖÃÓÂÊ¿³¯Ïò
+    
+	//è®¾ç½®å‹‡å£«æœå‘
 	void setFaceDirection(HeroDirection direction);
-
-	//¿ªÊ¼Õ½¶·Âß¼­
+    
+	//å¼€å§‹æˆ˜æ–—é€»è¾‘
 	void fight();
-
-	//±êÊ¶ÓÂÊ¿ÊÇ·ñÔÚÒÆ¶¯×´Ì¬
+    
+	//æ ‡è¯†å‹‡å£«æ˜¯å¦åœ¨ç§»åŠ¨çŠ¶æ€
 	bool isHeroMoving;
-
-	//±êÊ¶ÓÂÊ¿ÊÇ·ñÔÚÕ½¶·×´Ì¬
+    
+	//æ ‡è¯†å‹‡å£«æ˜¯å¦åœ¨æˆ˜æ–—çŠ¶æ€
 	bool isHeroFighting;
-
-	//±êÊ¶ÓÂÊ¿ÊÇ·ñÔÚ¿ªÃÅ×´Ì¬
+    
+	//æ ‡è¯†å‹‡å£«æ˜¯å¦åœ¨å¼€é—¨çŠ¶æ€
 	bool isDoorOpening;
-
-	//Ê°È¡ÎïÆ·
+    
+	//æ‹¾å–ç‰©å“
 	void pickUpItem();
-
-	//¿ªÃÅ
+    
+	//å¼€é—¨
 	void openDoor(int targetDoorGID);
-
-	//¶ÔNPC½»»¥
+    
+	//å¯¹NPCäº¤äº’
 	void actWithNPC();
-
-	//´«ËÍ
+    
+	//ä¼ é€
 	void doTeleport(Teleport *teleport);
-
+    
 protected:
-	//ÓÃÓÚÏÔÊ¾ÓÂÊ¿ĞÎÏóµÄ¾«Áé
+	//ç”¨äºæ˜¾ç¤ºå‹‡å£«å½¢è±¡çš„ç²¾çµ
 	Sprite *heroSprite;
 	
-	//ÁÙÊ±±£´æÄ¿±êµÄTilemap×ø±ê
+	//ä¸´æ—¶ä¿å­˜ç›®æ ‡çš„Tilemapåæ ‡
 	Point targetTileCoord;
 	
-	//ÁÙÊ±±£´æÄ¿±êµÄcocos2d-x×ø±ê
+	//ä¸´æ—¶ä¿å­˜ç›®æ ‡çš„cocos2d-xåæ ‡
 	Point targetPosition;
 	
-	//ÁÙÊ±±£´æÃÅÆğÊ¼µÄÍ¼¿éID
+	//ä¸´æ—¶ä¿å­˜é—¨èµ·å§‹çš„å›¾å—ID
 	int targetDoorGID;
 	
-	//ÏÔÊ¾Õ½¶·¶¯»­µÄ¾«Áé
+	//æ˜¾ç¤ºæˆ˜æ–—åŠ¨ç”»çš„ç²¾çµ
 	Sprite *fightSprite;
 	
-	//Õ½¶·Íê³ÉºóµÄ»Øµ÷º¯Êı
+	//æˆ˜æ–—å®Œæˆåçš„å›è°ƒå‡½æ•°
 	void onFightDone(Node* pTarget);
 	
-	//Åö×²¼ì²â·½·¨
+	//ç¢°æ’æ£€æµ‹æ–¹æ³•
 	CollisionType checkCollision(Point heroPosition);
 	
-	//ÒÆ¶¯Íê³ÉºóµÄ»Øµ÷º¯Êı
+	//ç§»åŠ¨å®Œæˆåçš„å›è°ƒå‡½æ•°
 	void onMoveDone(Node* pTarget, void* data);
 	
-	//¸üĞÂ¿ªÃÅ¶¯»­
+	//æ›´æ–°å¼€é—¨åŠ¨ç”»
 	void updateOpenDoorAnimation(float time);
 };
 

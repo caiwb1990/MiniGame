@@ -10,14 +10,14 @@ class Enemy : public Ref
 public:
 	Enemy(void);
 	~Enemy(void);
-
-	//怪物在TileMap上的方位
+    
+	//鎬墿鍦═ileMap涓婄殑鏂逛綅
 	Point position;
-
-	//怪物初始的图块ID
+    
+	//鎬墿鍒濆鐨勫浘鍧桰D
 	int startGID;
-
-	//怪物在字典中的index
+    
+	//鎬墿鍦ㄥ瓧鍏镐腑鐨刬ndex
 	int index;
 };
 

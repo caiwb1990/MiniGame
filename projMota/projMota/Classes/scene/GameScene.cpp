@@ -11,56 +11,56 @@ GameScene::~GameScene(void)
 
 bool GameScene::init()
 {
-	//ÐÂ½¨Ò»¸öGameLayerÊµÀý
+	//æ–°å»ºä¸€ä¸ªGameLayerå®žä¾‹
 	GameLayer *gamelayer = GameLayer::create();
-
-	//½«GameLayerÊµÀýÌí¼Óµ½³¡¾°ÖÐ
+    
+	//å°†GameLayerå®žä¾‹æ·»åŠ åˆ°åœºæ™¯ä¸­
 	this->addChild(gamelayer, kGameLayer, kGameLayer);
-
-	//ÐÂ½¨Ò»¸öControlLayerÊµÀý
+    
+	//æ–°å»ºä¸€ä¸ªControlLayerå®žä¾‹
 	ControlLayer *controlLayer = ControlLayer::create();
-
-	//½«ControlLayerÊµÀýÌí¼Óµ½³¡¾°ÖÐ
+    
+	//å°†ControlLayerå®žä¾‹æ·»åŠ åˆ°åœºæ™¯ä¸­
 	this->addChild(controlLayer, kControlLayer, kControlLayer);
-
+    
 	return true;
 }
 
-//ÇÐ»»ÓÎÏ·µØÍ¼Ö®Ç°
+//åˆ‡æ¢æ¸¸æˆåœ°å›¾ä¹‹å‰
 void GameScene::switchMap()
 {
-	//´´½¨Ò»¸öÕÚÕÖ²ã£¬ÓÃÓÚµØÍ¼ÇÐ»»Ê±µÄÏÔÊ¾µ­Èëµ­³öÐ§¹û
+	//åˆ›å»ºä¸€ä¸ªé®ç½©å±‚ï¼Œç”¨äºŽåœ°å›¾åˆ‡æ¢æ—¶çš„æ˜¾ç¤ºæ·¡å…¥æ·¡å‡ºæ•ˆæžœ
 	LayerColor* fadeLayer = LayerColor::create(Color4B(0, 0, 0, 0));
-
+    
 	fadeLayer->setAnchorPoint(Point::ZERO);
 	fadeLayer->setPosition(Point::ZERO);
 	addChild(fadeLayer, kFadeLayer, kFadeLayer);
-
-	//Ö´ÐÐµ­Èë¶¯»­£¬½áÊøºóµ÷ÓÃresetGameLayer·½·¨
+    
+	//æ‰§è¡Œæ·¡å…¥åŠ¨ç”»ï¼Œç»“æŸåŽè°ƒç”¨resetGameLayeræ–¹æ³•
 	Action* action = Sequence::create(
-		FadeIn::create(0.5f), 
-		CallFunc::create(CC_CALLBACK_0(GameScene::resetGameLayer, this)), 
-		NULL);
-
+                                      FadeIn::create(0.5f),
+                                      CallFunc::create(CC_CALLBACK_0(GameScene::resetGameLayer, this)),
+                                      NULL);
+    
 	fadeLayer->runAction(action);
 }
 
-//ÇÐ»»ÓÎÏ·µØÍ¼
+//åˆ‡æ¢æ¸¸æˆåœ°å›¾
 void GameScene::resetGameLayer()
 {
-	//É¾³ýÀÏµÄGameLayer
+	//åˆ é™¤è€çš„GameLayer
 	this->removeChildByTag(kGameLayer, true);
-
-	//´´½¨ÐÂµÄGameLayer
+    
+	//åˆ›å»ºæ–°çš„GameLayer
 	GameLayer *gamelayer = GameLayer::create();
 	this->addChild(gamelayer, kGameLayer, kGameLayer);
-
-	//ÕÚÕÖ²ãÖ´ÐÐµ­³öÐ§¹û£¬½áÊøºó£¬µ÷ÓÃremoveFadeLayer·½·¨É¾³ýÕÚÕÖ²ã
+    
+	//é®ç½©å±‚æ‰§è¡Œæ·¡å‡ºæ•ˆæžœï¼Œç»“æŸåŽï¼Œè°ƒç”¨removeFadeLayeræ–¹æ³•åˆ é™¤é®ç½©å±‚
 	Action* action = Sequence::create(
-		FadeOut::create(0.5f), 
-		CallFunc::create(CC_CALLBACK_0(GameScene::removeFadeLayer, this)),	
-		NULL);
-
+                                      FadeOut::create(0.5f),
+                                      CallFunc::create(CC_CALLBACK_0(GameScene::removeFadeLayer, this)),
+                                      NULL);
+    
 	this->getChildByTag(kFadeLayer)->runAction(action);
 }
 

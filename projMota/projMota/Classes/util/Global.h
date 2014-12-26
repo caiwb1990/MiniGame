@@ -16,24 +16,24 @@ class Global : public Singleton<Global>
 public:
 	Global(void);
 	~Global(void);
-
+    
 	GameScene *gameScene;
-
-	//ÓÎÏ·Ö÷Í¼²ã
+    
+	//æ¸¸æˆä¸»å›¾å±‚
 	GameLayer *gameLayer;
-
+    
 	ControlLayer *controlLayer;
-
-	//ÓÎÏ·µØÍ¼
+    
+	//æ¸¸æˆåœ°å›¾
 	GameMap *gameMap;
-
-	//ÓÂÊ¿
+    
+	//å‹‡å£«
 	Hero *hero;
-
-	//Ä¿±êµØÍ¼µÄ²ãÊı
+    
+	//ç›®æ ‡åœ°å›¾çš„å±‚æ•°
 	int currentLevel;
-
-	//ÓÂÊ¿³öÏÖµÄÆğÊ¼Î»ÖÃ
+    
+	//å‹‡å£«å‡ºç°çš„èµ·å§‹ä½ç½®
 	Point heroSpawnTileCoord;
 };
 

@@ -7,7 +7,7 @@ Hero::Hero()
 
 Hero::~Hero()
 {
-
+    
 }
 
 bool Hero::init()
@@ -16,21 +16,21 @@ bool Hero::init()
 	{
 		return false;
 	}
-
+    
 	//根据向下行走动画的第一帧创建精灵spriteWithSpriteFrame
 	heroSprite = Sprite::createWithSpriteFrame(sAnimationMgr->getAnimation(kDown)->getFrames().at(0)->getSpriteFrame());
-
+    
 	//设置锚点
 	heroSprite->setAnchorPoint(Point::ZERO);
-
+    
 	//将用于显示的heroSprite加到自己的节点下
 	this->addChild(heroSprite);
-
+    
 	//创建空的战斗动画精灵
 	fightSprite = Sprite::create();
-
+    
 	this->addChild(fightSprite);
-
+    
 	//一开始不处于move状态。
 	isHeroMoving = false;
 	isHeroFighting = false;
@@ -38,59 +38,59 @@ bool Hero::init()
 	return true;
 }
 
-void Hero::move(HeroDirection direction) 
+void Hero::move(HeroDirection direction)
 {
 	if (isHeroMoving)
 	{
 		return;
 	}
-
+    
 	//移动的距离
 	Point moveByPosition;
-
+    
 	//根据方向计算移动的距离
 	switch (direction)
 	{
-	case kDown:
-		moveByPosition = Point(0, -32);
-		break;
-	case kLeft:
-		moveByPosition = Point(-32, 0);
-		break;
-	case kRight:
-		moveByPosition = Point(32, 0);
-		break;
-	case kUp:
-		moveByPosition = Point(0, 32);
-		break;
+        case kDown:
+            moveByPosition = Point(0, -32);
+            break;
+        case kLeft:
+            moveByPosition = Point(-32, 0);
+            break;
+        case kRight:
+            moveByPosition = Point(32, 0);
+            break;
+        case kUp:
+            moveByPosition = Point(0, 32);
+            break;
 	}
-
+    
 	//计算目标坐标，用当前勇士坐标加上移动距离
 	targetPosition = this->getPosition() + moveByPosition;
-
+    
 	//调用checkCollision检测碰撞类型，如果是墙壁、怪物、门，则只需要设置勇士的朝向
 	CollisionType collisionType = checkCollision(targetPosition);
-
-	if (collisionType == kWall 
+    
+	if (collisionType == kWall
 		|| collisionType == kEnemy
-		|| collisionType == kDoor 
+		|| collisionType == kDoor
 		|| collisionType == kNPC)
 	{
 		setFaceDirection((HeroDirection)direction);
 		return;
 	}
-
+    
 	//heroSprite仅播放行走动画
 	heroSprite->runAction(sAnimationMgr->createAnimate(direction));
-
+    
 	//主体进行位移，结束时调用onMoveDone方法 把方向信息传递给onMoveDone方法
 	Action *action = Sequence::create(
-		MoveBy::create(0.20f, moveByPosition), 
-		CallFuncN::create(CC_CALLBACK_1(Hero::onMoveDone, this, (void*)direction)), 
-		NULL);
-
+                                      MoveBy::create(0.20f, moveByPosition),
+                                      CallFuncN::create(CC_CALLBACK_1(Hero::onMoveDone, this, (void*)direction)),
+                                      NULL);
+    
 	this->runAction(action);
-
+    
 	isHeroMoving = true;
 }
 
@@ -109,11 +109,11 @@ void Hero::setFaceDirection(HeroDirection direction)
 }
 
 //判断碰撞类型
-CollisionType Hero::checkCollision(Point heroPosition) 
+CollisionType Hero::checkCollision(Point heroPosition)
 {
 	//cocos2d-x坐标转换为Tilemap坐标
 	targetTileCoord = sGlobal->gameMap->tileCoordForPosition(heroPosition);
-
+    
 	//如果勇士坐标超过地图边界，返回kWall类型，阻止其移动
 	if (heroPosition.x < 0
 		|| targetTileCoord.x > sGlobal->gameMap->getMapSize().width - 1
@@ -122,30 +122,30 @@ CollisionType Hero::checkCollision(Point heroPosition)
 	{
 		return kWall;
 	}
-
+    
 	//获取墙壁层对应坐标的图块ID
 	int targetTileGID = sGlobal->gameMap->getWallLayer()->getTileGIDAt(targetTileCoord);
-
+    
 	//如果图块ID不为0，表示有墙
-	if (targetTileGID) 
+	if (targetTileGID)
 	{
 		return kWall;
 	}
-
+    
 	//获取怪物层对应坐标的图块ID
 	targetTileGID = sGlobal->gameMap->getEnemyLayer()->getTileGIDAt(targetTileCoord);
-
+    
 	//如果图块ID不为0，表示有怪物
-	if (targetTileGID) 
+	if (targetTileGID)
 	{
 		//开始战斗
 		fight();
 		return kEnemy;
 	}
-
+    
 	//获取物品层对应坐标的图块ID
 	targetTileGID = sGlobal->gameMap->getItemLayer()->getTileGIDAt(targetTileCoord);
-
+    
 	//如果图块ID不为0，表示有物品
 	if (targetTileGID)
 	{
@@ -153,10 +153,10 @@ CollisionType Hero::checkCollision(Point heroPosition)
 		pickUpItem();
 		return kItem;
 	}
-
+    
 	//获取门层对应坐标的图块ID
 	targetTileGID = sGlobal->gameMap->getDoorLayer()->getTileGIDAt(targetTileCoord);
-
+    
 	//如果图块ID不为0，表示有门
 	if (targetTileGID)
 	{
@@ -164,9 +164,9 @@ CollisionType Hero::checkCollision(Point heroPosition)
 		openDoor(targetTileGID);
 		return kDoor;
 	}
-
+    
 	int index = targetTileCoord.x + targetTileCoord.y * sGlobal->gameMap->getMapSize().width;
-
+    
 	//从npc字典中查询
 	NPC *npc = sGlobal->gameMap->npcDict.at(index);
 	if (npc != NULL)
@@ -174,7 +174,7 @@ CollisionType Hero::checkCollision(Point heroPosition)
 		actWithNPC();
 		return kNPC;
 	}
-
+    
 	//从Teleport字典中查询
 	Teleport *teleport = sGlobal->gameMap->teleportDict.at(index);
 	if (teleport != NULL)
@@ -182,7 +182,7 @@ CollisionType Hero::checkCollision(Point heroPosition)
 		doTeleport(teleport);
 		return kTeleport;
 	}
-
+    
 	//可以通行
 	return kNone;
 }
@@ -195,30 +195,30 @@ void Hero::fight()
 	{
 		return;
 	}
-
+    
 	isHeroFighting = true;
-
+    
 	//显示怪物受到打击的效果
 	sGlobal->gameMap->showEnemyHitEffect(targetTileCoord);
-
+    
 	//显示损失的生命值，先用假数据替代一下
 	char temp[30] = { 0 };
 	sprintf(temp, "lost hp: -%d", 100);
 	sGlobal->gameLayer->showTip(temp, getPosition());
-
+    
 	//将用于显示战斗动画的精灵设置为可见
 	fightSprite->setVisible(true);
-
+    
 	//计算显示战斗动画的位置为勇士和怪物的中间点
 	Point pos = Point((targetPosition.x - getPosition().x) / 2 + 16, (targetPosition.y - getPosition().y) / 2 + 16);
 	fightSprite->setPosition(pos);
-
+    
 	//创建战斗动画
 	Action* action = Sequence::create(
-		sAnimationMgr->createAnimate(aFight),
-		CallFuncN::create(CC_CALLBACK_1(Hero::onFightDone, this)),
-		NULL);
-
+                                      sAnimationMgr->createAnimate(aFight),
+                                      CallFuncN::create(CC_CALLBACK_1(Hero::onFightDone, this)),
+                                      NULL);
+    
 	fightSprite->runAction(action);
 }
 
@@ -235,7 +235,7 @@ void Hero::pickUpItem()
 {
 	//显示提示消息
 	sGlobal->gameLayer->showTip("get an item, hp +100", this->getPosition());
-
+    
 	//将物品从地图上移除
 	sGlobal->gameMap->getItemLayer()->removeTileAt(targetTileCoord);
 }
@@ -248,11 +248,11 @@ void Hero::openDoor(int gid)
 	{
 		return;
 	}
-
+    
 	//保存正在被开启的门的初始GID
 	targetDoorGID = gid;
 	isDoorOpening = true;
-
+    
 	//定时器更新门动画
 	schedule(schedule_selector(Hero::updateOpenDoorAnimation), 0.1f);
 }
@@ -262,9 +262,9 @@ void Hero::updateOpenDoorAnimation(float time)
 {
 	//计算动画下一帧的图块ID，TileMap的图块编号方式是横向递增1，所以每列相同的位置的图块ID相差了每行图块的个数
 	int nextGID = sGlobal->gameMap->getDoorLayer()->getTileGIDAt(targetTileCoord) + 4;
-
+    
 	//如果超过了第四帧动画，就将当前位置的图块删除，并取消定时器
-	if (nextGID - targetDoorGID > 4 * 3) 
+	if (nextGID - targetDoorGID > 4 * 3)
 	{
 		sGlobal->gameMap->getDoorLayer()->removeTileAt(targetTileCoord);
 		unschedule(schedule_selector(Hero::updateOpenDoorAnimation));
@@ -288,10 +288,10 @@ void Hero::doTeleport(Teleport *teleport)
 {
 	//从传送点的属性中后去目标地图的层数
 	sGlobal->currentLevel = teleport->targetMap;
-
+    
 	//获取勇士在新地图中的起始位置
 	sGlobal->heroSpawnTileCoord = teleport->heroTileCoord;
-
+    
 	//开始切换游戏地图
 	sGlobal->gameScene->switchMap();
 }

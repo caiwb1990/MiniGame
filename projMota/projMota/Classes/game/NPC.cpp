@@ -2,39 +2,39 @@
 
 NPC::NPC(const ValueMap &dict, int x, int y)
 {
-	//»ñÈ¡Ãû³Æ
+	//èŽ·å–åç§°
 	std::string key = "name";
 	npcId = dict.at(key).asInt();
-
-	//»ñÈ¡ÀàÐÍ
+    
+	//èŽ·å–ç±»åž‹
 	key = "type";
 	type = dict.at(key).asString();
-
-	//»ñÈ¡imageÏî
+    
+	//èŽ·å–imageé¡¹
 	key = "image";
 	imagePath = dict.at(key).asString();
-
-	//»ñÈ¡rectXºÍrectY
+    
+	//èŽ·å–rectXå’ŒrectY
 	key = "rectX";
 	int x1 = dict.at(key).asInt();
-
+    
 	key = "rectY";
 	int y1 = dict.at(key).asInt();
-
+    
 	rect = Rect(x1, y1, 32, 32);
-
-	//positionÎªcocos2d-x×ø±ê£¬tileCoordÎªTileMap×ø±ê
+    
+	//positionä¸ºcocos2d-xåæ ‡ï¼ŒtileCoordä¸ºTileMapåæ ‡
 	Point position = Point(x, y);
 	tileCoord = sGlobal->gameMap->tileCoordForPosition(position);
-
-	//´´½¨ÓÃÓÚÏÔÊ¾npcµÄ¾«Áé
+    
+	//åˆ›å»ºç”¨äºŽæ˜¾ç¤ºnpcçš„ç²¾çµ
 	npcSprite = Sprite::create(imagePath, rect);
 	npcSprite->setAnchorPoint(Point::ZERO);
 	npcSprite->setPosition(position);
-
+    
 	sGlobal->gameLayer->addChild(npcSprite, kZNPC);
-
-	//´Ó¶¯»­¹ÜÀíÆ÷ÖÐ¸ù¾ÝnpcId»ñÈ¡¶¯»­£¬¿ªÊ¼ÓÀ¾Ã²¥·Å
+    
+	//ä»ŽåŠ¨ç”»ç®¡ç†å™¨ä¸­æ ¹æ®npcIdèŽ·å–åŠ¨ç”»ï¼Œå¼€å§‹æ°¸ä¹…æ’­æ”¾
 	Animate* animation = sAnimationMgr->createAnimate(npcId);
 	if (animation != NULL)
 	{

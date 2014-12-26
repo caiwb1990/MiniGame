@@ -5,9 +5,9 @@ template <class T>
 class Singleton
 {
 public:
-	//»ñÈ¡ÀàµÄÎ¨Ò»ÊµÀı
+	//è·å–ç±»çš„å”¯ä¸€å®ä¾‹
 	static inline T* instance();
-	//ÊÍ·ÅÀàµÄÎ¨Ò»ÊµÀı
+	//é‡Šæ”¾ç±»çš„å”¯ä¸€å®ä¾‹
 	void release();
 protected:
 	Singleton(void){}
@@ -32,8 +32,8 @@ void Singleton<T>::release()
 	_instance = 0;
 }
 
-//cppÎÄ¼şÖĞĞèÒªÏÈÉùÃ÷¾²Ì¬±äÁ¿
+//cppæ–‡ä»¶ä¸­éœ€è¦å…ˆå£°æ˜é™æ€å˜é‡
 #define DECLARE_SINGLETON_MEMBER(_Ty)	\
-	template <> _Ty* Singleton<_Ty>::_instance = NULL;
+template <> _Ty* Singleton<_Ty>::_instance = NULL;
 
 #endif//_SINGLETON_H

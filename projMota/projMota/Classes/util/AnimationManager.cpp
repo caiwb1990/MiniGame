@@ -8,7 +8,7 @@ AnimationManager::AnimationManager()
 
 AnimationManager::~AnimationManager()
 {
-	//Director»á×Ô¼ºÇå³ıAnimationCache
+	//Directorä¼šè‡ªå·±æ¸…é™¤AnimationCache
 	//AnimationCache::purgeSharedAnimationCache();
 }
 
@@ -16,29 +16,29 @@ bool AnimationManager::initAnimationMap()
 {
 	char temp[20];
 	
-	//¼ÓÔØÓÂÊ¿ÏòÏÂ×ßµÄ¶¯»­
+	//åŠ è½½å‹‡å£«å‘ä¸‹èµ°çš„åŠ¨ç”»
 	sprintf(temp, "%d", aDown);
 	AnimationCache::getInstance()->addAnimation(createHeroMovingAnimationByDirection(kDown), temp);
 	
-	//¼ÓÔØÓÂÊ¿ÏòÓÒ×ßµÄ¶¯»­
+	//åŠ è½½å‹‡å£«å‘å³èµ°çš„åŠ¨ç”»
 	sprintf(temp, "%d", aRight);
 	AnimationCache::getInstance()->addAnimation(createHeroMovingAnimationByDirection(kRight), temp);
 	
-	//¼ÓÔØÓÂÊ¿Ïò×ó×ßµÄ¶¯»­
+	//åŠ è½½å‹‡å£«å‘å·¦èµ°çš„åŠ¨ç”»
 	sprintf(temp, "%d", aLeft);
 	AnimationCache::getInstance()->addAnimation(createHeroMovingAnimationByDirection(kLeft), temp);
-
-	//¼ÓÔØÓÂÊ¿ÏòÉÏ×ßµÄ¶¯»­
+    
+	//åŠ è½½å‹‡å£«å‘ä¸Šèµ°çš„åŠ¨ç”»
 	sprintf(temp, "%d", aUp);
 	AnimationCache::getInstance()->addAnimation(createHeroMovingAnimationByDirection(kUp), temp);
 	
-	//¼ÓÔØÕ½¶·¶¯»­
+	//åŠ è½½æˆ˜æ–—åŠ¨ç”»
 	sprintf(temp, "%d", aFight);
 	AnimationCache::getInstance()->addAnimation(createFightAnimation(), temp);
 	
-	//¼ÓÔØNPC¶¯»­
+	//åŠ è½½NPCåŠ¨ç”»
 	AnimationCache::getInstance()->addAnimation(createNPCAnimation(), "npc0");
-
+    
 	return true;
 }
 
@@ -46,32 +46,32 @@ Animation* AnimationManager::createHeroMovingAnimationByDirection(HeroDirection 
 {
 	Texture2D *heroTexture = TextureCache::getInstance()->addImage("hero.png");
 	
-	//µÚ¶ş¸ö²ÎÊı±íÊ¾ÏÔÊ¾ÇøÓòµÄx, y, width, height£¬¸ù¾İdirectionÀ´È·¶¨ÏÔÊ¾µÄy×ø±ê
+	//ç¬¬äºŒä¸ªå‚æ•°è¡¨ç¤ºæ˜¾ç¤ºåŒºåŸŸçš„x, y, width, heightï¼Œæ ¹æ®directionæ¥ç¡®å®šæ˜¾ç¤ºçš„yåæ ‡
 	SpriteFrame *frame0 = SpriteFrame::createWithTexture(heroTexture, Rect(32*0, 32*direction, 32, 32));
 	SpriteFrame *frame1 = SpriteFrame::createWithTexture(heroTexture, Rect(32*1, 32*direction, 32, 32));
 	SpriteFrame *frame2 = SpriteFrame::createWithTexture(heroTexture, Rect(32*2, 32*direction, 32, 32));
 	SpriteFrame *frame3 = SpriteFrame::createWithTexture(heroTexture, Rect(32*3, 32*direction, 32, 32));
 	
 	Vector<SpriteFrame*> animFrames;
-
+    
 	animFrames.pushBack(frame0);
 	animFrames.pushBack(frame1);
 	animFrames.pushBack(frame2);
 	animFrames.pushBack(frame3);
-
-	//0.05f±íÊ¾Ã¿Ö¡¶¯»­¼äµÄ¼ä¸ô
+    
+	//0.05fè¡¨ç¤ºæ¯å¸§åŠ¨ç”»é—´çš„é—´éš”
 	Animation* animation = Animation::createWithSpriteFrames(animFrames, 0.05f);
-
+    
 	return animation;
 }
 
-//´´½¨Õ½¶·¶¯»­Ä£°å
+//åˆ›å»ºæˆ˜æ–—åŠ¨ç”»æ¨¡æ¿
 Animation* AnimationManager::createFightAnimation()
 {
 	Texture2D *texture = TextureCache::getInstance()->addImage("sword.png");
-
-	//¶¨ÒåÃ¿Ö¡µÄĞòºÅ
-	int fightAnim[] = 
+    
+	//å®šä¹‰æ¯å¸§çš„åºå·
+	int fightAnim[] =
 	{
 		4,6,8,10,13,15,17,19,20,22
 	};
@@ -79,15 +79,15 @@ Animation* AnimationManager::createFightAnimation()
 	Vector<SpriteFrame*> animFrames;
 	
 	int x, y;
-	for (int i = 0; i < 10; i++) 
+	for (int i = 0; i < 10; i++)
 	{
-		//¼ÆËãÃ¿Ö¡ÔÚÕû¸öÎÆÀíÖĞµÄÆ«ÒÆÁ¿
+		//è®¡ç®—æ¯å¸§åœ¨æ•´ä¸ªçº¹ç†ä¸­çš„åç§»é‡
 		x = fightAnim[i] % 5 - 1;
 		y = fightAnim[i] / 5;
 		
 		SpriteFrame *frame = SpriteFrame::createWithTexture(texture, Rect(192*x, 192*y, 192, 192));
 		
-		//µÚ17ºÍ19Ö¡ÔÚy·½ÏòÉÏÓĞ-8µÄÆ«ÒÆ
+		//ç¬¬17å’Œ19å¸§åœ¨yæ–¹å‘ä¸Šæœ‰-8çš„åç§»
 		if (fightAnim[i] == 17 || fightAnim[i] == 19)
 		{
 			frame->setOffsetInPixels(Point(0, -8));
@@ -95,9 +95,9 @@ Animation* AnimationManager::createFightAnimation()
 		
 		animFrames.pushBack(frame);
 	}
-
+    
 	Animation* animation = Animation::createWithSpriteFrames(animFrames, 0.1f);
-
+    
 	return animation;
 }
 
@@ -105,26 +105,26 @@ Animation* AnimationManager::createNPCAnimation()
 {
 	Texture2D *heroTexture = TextureCache::getInstance()->addImage("npc.png");
 	
-	//µÚ¶ş¸ö²ÎÊı±íÊ¾ÏÔÊ¾ÇøÓòµÄx, y, width, height£¬¸ù¾İdirectionÀ´È·¶¨ÏÔÊ¾µÄy×ø±ê
+	//ç¬¬äºŒä¸ªå‚æ•°è¡¨ç¤ºæ˜¾ç¤ºåŒºåŸŸçš„x, y, width, heightï¼Œæ ¹æ®directionæ¥ç¡®å®šæ˜¾ç¤ºçš„yåæ ‡
 	SpriteFrame *frame0 = SpriteFrame::createWithTexture(heroTexture, Rect(32*0, 0, 32, 32));
 	SpriteFrame *frame1 = SpriteFrame::createWithTexture(heroTexture, Rect(32*1, 0, 32, 32));
 	SpriteFrame *frame2 = SpriteFrame::createWithTexture(heroTexture, Rect(32*2, 0, 32, 32));
 	SpriteFrame *frame3 = SpriteFrame::createWithTexture(heroTexture, Rect(32*3, 0, 32, 32));
 	
 	Vector<SpriteFrame*> animFrames;
-
+    
 	animFrames.pushBack(frame0);
 	animFrames.pushBack(frame1);
 	animFrames.pushBack(frame2);
 	animFrames.pushBack(frame3);
 	
-	//0.05f±íÊ¾Ã¿Ö¡¶¯»­¼äµÄ¼ä¸ô
+	//0.05fè¡¨ç¤ºæ¯å¸§åŠ¨ç”»é—´çš„é—´éš”
 	Animation* animation = Animation::createWithSpriteFrames(animFrames, 0.2f);
-
+    
 	return animation;
 }
 
-//»ñÈ¡Ö¸¶¨¶¯»­Ä£°æ
+//è·å–æŒ‡å®šåŠ¨ç”»æ¨¡ç‰ˆ
 Animation* AnimationManager::getAnimation(int key)
 {
 	char temp[20];
@@ -132,32 +132,32 @@ Animation* AnimationManager::getAnimation(int key)
 	return AnimationCache::getInstance()->animationByName(temp);
 }
 
-//»ñÈ¡Ò»¸öÖ¸¶¨¶¯»­Ä£°æµÄÊµÀı
+//è·å–ä¸€ä¸ªæŒ‡å®šåŠ¨ç”»æ¨¡ç‰ˆçš„å®ä¾‹
 Animate* AnimationManager::createAnimate(int key)
 {
-	//»ñÈ¡Ö¸¶¨¶¯»­Ä£°æ
+	//è·å–æŒ‡å®šåŠ¨ç”»æ¨¡ç‰ˆ
 	Animation* anim = getAnimation(key);
-
+    
 	if (anim == NULL)
 	{
 		return NULL;
 	}
-
-	//¸ù¾İ¶¯»­Ä£°æÉú³ÉÒ»¸ö¶¯»­ÊµÀı
+    
+	//æ ¹æ®åŠ¨ç”»æ¨¡ç‰ˆç”Ÿæˆä¸€ä¸ªåŠ¨ç”»å®ä¾‹
 	return Animate::create(anim);
 }
 
-//»ñÈ¡Ò»¸öÖ¸¶¨¶¯»­Ä£°æµÄÊµÀı
+//è·å–ä¸€ä¸ªæŒ‡å®šåŠ¨ç”»æ¨¡ç‰ˆçš„å®ä¾‹
 Animate* AnimationManager::createAnimate(const char* key)
 {
-	//»ñÈ¡Ö¸¶¨¶¯»­Ä£°æ
+	//è·å–æŒ‡å®šåŠ¨ç”»æ¨¡ç‰ˆ
 	Animation* anim = AnimationCache::getInstance()->animationByName(key);
-
+    
 	if (anim == NULL)
 	{
 		return NULL;
 	}
-
-	//¸ù¾İ¶¯»­Ä£°æÉú³ÉÒ»¸ö¶¯»­ÊµÀı
+    
+	//æ ¹æ®åŠ¨ç”»æ¨¡ç‰ˆç”Ÿæˆä¸€ä¸ªåŠ¨ç”»å®ä¾‹
 	return Animate::create(anim);
 }

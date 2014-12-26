@@ -9,24 +9,24 @@ class Teleport : public Ref
 {
 public:
 	Teleport(const ValueMap &dict, int x, int y);
-
+    
 	~Teleport(void);
-
-	//´«ËÍµãËùÔÚÎ»ÖÃ
+    
+	//ä¼ é€ç‚¹æ‰€åœ¨ä½ç½®
 	Point tileCoord;
-
-	//´«ËÍµ½Ä¿±ê²ãºó£¬ÓÂÊ¿ËùÔÚ×ø±ê
+    
+	//ä¼ é€åˆ°ç›®æ ‡å±‚åï¼Œå‹‡å£«æ‰€åœ¨åæ ‡
 	Point heroTileCoord;
-
-	//Ä¿±êµØÍ¼µÄ²ãÊı
+    
+	//ç›®æ ‡åœ°å›¾çš„å±‚æ•°
 	int targetMap;
-
-	//Î¨Ò»µÄID
+    
+	//å”¯ä¸€çš„ID
 	int index;
-
-	//Í¼Æ¬ÎÆÀíµÄÎÄ¼şÂ·¾¶
+    
+	//å›¾ç‰‡çº¹ç†çš„æ–‡ä»¶è·¯å¾„
 	std::string imagePath;
-
+    
 	Sprite *teleportSprite;
 };
 #endif

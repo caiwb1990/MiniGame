@@ -8,56 +8,56 @@ USING_NS_CC;
 class NPC;
 class Teleport;
 
-//¼Ì³Ğ×ÔCCTMXTIledMap
+//ç»§æ‰¿è‡ªCCTMXTIledMap
 class GameMap : public TMXTiledMap
 {
-	//Ö»¶Á±äÁ¿£¬»ñÈ¡¸÷Í¼²ãCC_PROPERTY_READONLY
+	//åªè¯»å˜é‡ï¼Œè·å–å„å›¾å±‚CC_PROPERTY_READONLY
 	CC_SYNTHESIZE(TMXLayer*, floorLayer, FloorLayer);
 	CC_SYNTHESIZE(TMXLayer*, wallLayer, WallLayer);
 	CC_SYNTHESIZE(TMXLayer*, enemyLayer, EnemyLayer);
 	CC_SYNTHESIZE(TMXLayer*, itemLayer, ItemLayer);
 	CC_SYNTHESIZE(TMXLayer*, doorLayer, DoorLayer);
-
+    
 public:
 	GameMap(void);
 	~GameMap(void);
-
-	//¾²Ì¬·½·¨£¬ÓÃÓÚÉú³ÉGameMapÊµÀı
+    
+	//é™æ€æ–¹æ³•ï¼Œç”¨äºç”ŸæˆGameMapå®ä¾‹
 	static GameMap* gameMapWithTMXFile(const char *tmxFile);
-
-	//TiledMapºÍcocos2d-x×ø±êÏµÏà»¥×ª»»µÄ·½·¨
+    
+	//TiledMapå’Œcocos2d-xåæ ‡ç³»ç›¸äº’è½¬æ¢çš„æ–¹æ³•
 	Point tileCoordForPosition(Point position);
 	Point positionForTileCoord(Point tileCoord);
 	void showEnemyHitEffect(Point tileCoord);
-
-	//´æ·ÅµØÍ¼ÉÏ¹ÖÎï¡¢´«ËÍÃÅÒÔ¼°npc 
+    
+	//å­˜æ”¾åœ°å›¾ä¸Šæ€ªç‰©ã€ä¼ é€é—¨ä»¥åŠnpc
 	Vector<Enemy*> enemyArray;
 	Map<int, Teleport*> teleportDict;
 	Map<int, NPC*> npcDict;
-
+    
 protected:
-	//TiledMap¶îÍâµÄ³õÊ¼»¯·½·¨
+	//TiledMapé¢å¤–çš„åˆå§‹åŒ–æ–¹æ³•
 	void extraInit();
-
-	//³õÊ¼»¯¹ÖÎïÊı×é
+    
+	//åˆå§‹åŒ–æ€ªç‰©æ•°ç»„
 	void initEnemy();
-
-	//³õÊ¼»¯¶ÔÏó
+    
+	//åˆå§‹åŒ–å¯¹è±¡
 	void initObject();
-
-	//¿ªÆô¸÷Í¼²ãµÄÎÆÀí¿¹¾â³İ
+    
+	//å¼€å¯å„å›¾å±‚çš„çº¹ç†æŠ—é”¯é½¿
 	void enableAnitiAliasForEachLayer();
-
-	//¸üĞÂ¹ÖÎï¶¯»­
+    
+	//æ›´æ–°æ€ªç‰©åŠ¨ç”»
 	void updateEnemyAnimation(float time);
-
-	//ÁÙÊ±±£´æÕ½¶·Ê±µÄ¹ÖÎï
+    
+	//ä¸´æ—¶ä¿å­˜æˆ˜æ–—æ—¶çš„æ€ªç‰©
 	Sprite* fightingEnemy;
-
-	//ÁÙÊ±±£´æ´ò»÷´ÎÊı
+    
+	//ä¸´æ—¶ä¿å­˜æ‰“å‡»æ¬¡æ•°
 	int fightCount;
-
-	//¸üĞÂ¹ÖÎïÕ½¶·Ê±µÄÑÕÉ«×´Ì¬
+    
+	//æ›´æ–°æ€ªç‰©æˆ˜æ–—æ—¶çš„é¢œè‰²çŠ¶æ€
 	void updateEnemyHitEffect(float time);
 };
 

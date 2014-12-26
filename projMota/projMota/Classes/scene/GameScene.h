@@ -1,24 +1,24 @@
 #ifndef __GAME_SCENE_H__
 #define __GAME_SCENE_H__
 
-//°üº¬¹«ÓÃÍ·ÎÄ¼ş
+//åŒ…å«å…¬ç”¨å¤´æ–‡ä»¶
 #include "MTGame.h"
 
-//Ê¹ÓÃcocos2dÃüÃû¿Õ¼ä
+//ä½¿ç”¨cocos2då‘½åç©ºé—´
 using namespace cocos2d;
 
-//GameScene¼Ì³ĞCCScene
-class GameScene : public Scene
+//GameSceneç»§æ‰¿CCScene
+class GameScene : public CCScene
 {
 public:
 	GameScene(void);
 	~GameScene(void);
-
-	//³õÊ¼»¯º¯Êı
+    
+	//åˆå§‹åŒ–å‡½æ•°
 	virtual bool init();
-
+    
 	CREATE_FUNC(GameScene);
-
+    
 	void switchMap();
 	void resetGameLayer();
 	void removeFadeLayer();

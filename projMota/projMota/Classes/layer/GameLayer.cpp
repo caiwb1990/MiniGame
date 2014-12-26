@@ -12,100 +12,100 @@ GameLayer::~GameLayer(void)
 
 bool GameLayer::init()
 {
-	//½âÎötmxµØÍ¼
+	//è§£æžtmxåœ°å›¾
 	char temp[20];
 	sprintf(temp, "%d.tmx", sGlobal->currentLevel);
-
+    
 	map = GameMap::gameMapWithTMXFile(temp);
-
+    
 	addChild(map, kZMap, kZMap);
-
-	//µ÷ÓÃHeroÀàµÄ¾²Ì¬·½·¨´´½¨ÊµÀý
+    
+	//è°ƒç”¨Heroç±»çš„é™æ€æ–¹æ³•åˆ›å»ºå®žä¾‹
 	hero = Hero::create();
-
-	//ÉèÖÃHeroµÄÆðÊ¼Î»ÖÃ
+    
+	//è®¾ç½®Heroçš„èµ·å§‹ä½ç½®
 	hero->setPosition(map->positionForTileCoord(sGlobal->heroSpawnTileCoord));
-
-	//½«Hero¼ÓÈëGameLayer
+    
+	//å°†HeroåŠ å…¥GameLayer
 	addChild(hero, kZHero, kZHero);
-
+    
 	schedule(schedule_selector(GameLayer::update));
-
+    
 	return true;
 }
 
 void GameLayer::update(float time)
 {
-	//Èç¹ûÓÂÊ¿²»ÔÚÐÐ×ß×´Ì¬£¬²»ÐèÒª¸üÐÂ³¡¾°Î»ÖÃ
+	//å¦‚æžœå‹‡å£«ä¸åœ¨è¡Œèµ°çŠ¶æ€ï¼Œä¸éœ€è¦æ›´æ–°åœºæ™¯ä½ç½®
 	if (hero->isHeroMoving)
 	{
 		setSceneScrollPosition(hero->getPosition());
 	}
 }
 
-//´«ÈëÓÂÊ¿µ±Ç°Î»ÖÃÐÅÏ¢£¬½«³¡¾°ÒÆ¶¯µ½ÏàÓ¦Î»ÖÃ
+//ä¼ å…¥å‹‡å£«å½“å‰ä½ç½®ä¿¡æ¯ï¼Œå°†åœºæ™¯ç§»åŠ¨åˆ°ç›¸åº”ä½ç½®
 void GameLayer::setSceneScrollPosition(Point position)
 {
-	//»ñÈ¡ÆÁÄ»³ß´ç
+	//èŽ·å–å±å¹•å°ºå¯¸
 	Size screenSize = Director::getInstance()->getWinSize();
-
-	//¼ÆËãTilemapµÄ¿í¸ß£¬µ¥Î»ÊÇÏñËØ
+    
+	//è®¡ç®—Tilemapçš„å®½é«˜ï¼Œå•ä½æ˜¯åƒç´ 
 	Size mapSizeInPixel = CCSizeMake(map->getMapSize().width * map->getTileSize().width, map->getMapSize().height * map->getTileSize().height);
-
-	//È¡ÓÂÊ¿µ±Ç°x×ø±êºÍÆÁÄ»ÖÐµãxµÄ×î´óÖµ£¬Èç¹ûÓÂÊ¿µÄxÖµ½Ï´ó£¬Ôò»á¹ö¶¯
+    
+	//å–å‹‡å£«å½“å‰xåæ ‡å’Œå±å¹•ä¸­ç‚¹xçš„æœ€å¤§å€¼ï¼Œå¦‚æžœå‹‡å£«çš„xå€¼è¾ƒå¤§ï¼Œåˆ™ä¼šæ»šåŠ¨
 	float x = MAX(position.x, screenSize.width / 2.0f);
 	float y = MAX(position.y, screenSize.height / 2.0f);
-
-	//µØÍ¼×Ü¿í¶È´óÓÚÆÁÄ»¿í¶ÈµÄÊ±ºò²ÅÓÐ¿ÉÄÜ¹ö¶¯
+    
+	//åœ°å›¾æ€»å®½åº¦å¤§äºŽå±å¹•å®½åº¦çš„æ—¶å€™æ‰æœ‰å¯èƒ½æ»šåŠ¨
 	if (mapSizeInPixel.width  > screenSize.width)
 	{
-		//³¡¾°¹ö¶¯µÄ×î´ó¾àÀë²»ÄÜ³¬¹ýµØÍ¼×Ü¿í¼õÈ¥ÆÁÄ»¿íµÄ1/2
+		//åœºæ™¯æ»šåŠ¨çš„æœ€å¤§è·ç¦»ä¸èƒ½è¶…è¿‡åœ°å›¾æ€»å®½å‡åŽ»å±å¹•å®½çš„1/2
 		x = MIN(x, mapSizeInPixel.width - screenSize.width / 2.0f);
 	}
-
+    
 	if (mapSizeInPixel.height > screenSize.height)
 	{
 		y = MIN(y, mapSizeInPixel.height - screenSize.height / 2.0f);
 	}
-
-	//ÓÂÊ¿µÄÊµ¼ÊÎ»ÖÃ
+    
+	//å‹‡å£«çš„å®žé™…ä½ç½®
 	Point heroPosition = Point(x, y);
-
-	//ÆÁÄ»ÖÐµãÎ»ÖÃ
+    
+	//å±å¹•ä¸­ç‚¹ä½ç½®
 	Point screenCenter = Point(screenSize.width/2.0f, screenSize.height/2.0f);
-
-	//¼ÆËãÓÂÊ¿Êµ¼ÊÎ»ÖÃºÍÖØµãÎ»ÖÃµÄ¾àÀë
+    
+	//è®¡ç®—å‹‡å£«å®žé™…ä½ç½®å’Œé‡ç‚¹ä½ç½®çš„è·ç¦»
 	Point scrollPosition = screenCenter - heroPosition;
-
-	//½«³¡¾°ÒÆ¶¯µ½ÏàÓ¦Î»ÖÃ
+    
+	//å°†åœºæ™¯ç§»åŠ¨åˆ°ç›¸åº”ä½ç½®
 	this->setPosition(scrollPosition);
-
+    
 	CCLog("%f,%f", scrollPosition.x, scrollPosition.y);
 }
 
-//ÏÔÊ¾ÌáÊ¾ÐÅÏ¢
+//æ˜¾ç¤ºæç¤ºä¿¡æ¯
 void GameLayer::showTip(const char *tip, Point startPosition)
 {
-	//ÐÂ½¨Ò»¸öÎÄ±¾±êÇ©
+	//æ–°å»ºä¸€ä¸ªæ–‡æœ¬æ ‡ç­¾
 	LabelTTF *tipLabel = LabelTTF::create(tip, "Arial", 20);
-
+    
 	tipLabel->setPosition(startPosition + Point(16, 16));
-
+    
 	this->addChild(tipLabel, kZTip,kZTip);
-
-	//¶¨Òå¶¯»­Ð§¹û
+    
+	//å®šä¹‰åŠ¨ç”»æ•ˆæžœ
 	Action* action = Sequence::create(
-		MoveBy::create(0.5f, Point(0, 32)), 
-		DelayTime::create(0.5f), FadeOut::create(0.2f), 
-		CallFuncN::create(CC_CALLBACK_1(GameLayer::onShowTipDone, this)),
-		NULL);
-
+                                      MoveBy::create(0.5f, Point(0, 32)),
+                                      DelayTime::create(0.5f), FadeOut::create(0.2f),
+                                      CallFuncN::create(CC_CALLBACK_1(GameLayer::onShowTipDone, this)),
+                                      NULL);
+    
 	tipLabel->runAction(action);
 }
 
-//ÌáÊ¾ÏûÏ¢ÏÔÊ¾ÍêºóµÄ»Øµ÷
+//æç¤ºæ¶ˆæ¯æ˜¾ç¤ºå®ŒåŽçš„å›žè°ƒ
 void GameLayer::onShowTipDone(Node* pSender)
 {
-	//É¾µôÎÄ±¾±êÇ©
+	//åˆ æŽ‰æ–‡æœ¬æ ‡ç­¾
 	this->getChildByTag(kZTip)->removeFromParentAndCleanup(true);
 }

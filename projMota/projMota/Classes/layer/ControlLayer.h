@@ -5,21 +5,21 @@
 
 USING_NS_CC;
 
-class ControlLayer : public CCLayer
+class ControlLayer : public Layer
 {
 public:
 	ControlLayer(void);
 	~ControlLayer(void);
-
-	//node·½·¨»áµ÷ÓÃ´Ëº¯Êı
+    
+	//nodeæ–¹æ³•ä¼šè°ƒç”¨æ­¤å‡½æ•°
 	virtual bool init();
-
+    
 	CREATE_FUNC(ControlLayer);
-
-	//·½Ïò°´Å¥µã»÷ÊÂ¼şµÄ»Øµ÷
+    
+	//æ–¹å‘æŒ‰é’®ç‚¹å‡»äº‹ä»¶çš„å›è°ƒ
 	void menuCallBackMove(cocos2d::Ref* pSender);
-
-	//¹Ø±Õ°´Å¥µã»÷ÊÂ¼şµÄ»Øµ÷
+    
+	//å…³é—­æŒ‰é’®ç‚¹å‡»äº‹ä»¶çš„å›è°ƒ
 	void menuCloseCallback(cocos2d::Ref* pSender);
 };
 

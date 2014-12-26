@@ -7,7 +7,7 @@ ControlLayer::ControlLayer(void)
 
 ControlLayer::~ControlLayer(void)
 {
-
+    
 }
 
 bool ControlLayer::init()
@@ -16,29 +16,29 @@ bool ControlLayer::init()
 	{
 		return false;
 	}
-
-	//创建关闭按钮
+    
+	//鍒涘缓鍏抽棴鎸夐挳
 	MenuItemImage *pCloseItem = MenuItemImage::create("CloseNormal.png", "CloseSelected.png", this, menu_selector(ControlLayer::menuCloseCallback));
 	pCloseItem->setPosition(Point(Director::getInstance()->getWinSize().width - 20, 20));
 	
 	Menu* pMenu = Menu::create(pCloseItem, NULL);
 	pMenu->setPosition(Point::ZERO);
 	this->addChild(pMenu, 1);
-
-	//创建方向按钮
+    
+	//鍒涘缓鏂瑰悜鎸夐挳
 	MenuItem *down = MenuItemFont::create("down", this, menu_selector(ControlLayer::menuCallBackMove));
 	MenuItem *left = MenuItemFont::create("left", this, menu_selector(ControlLayer::menuCallBackMove) );
 	MenuItem *right = MenuItemFont::create("right", this, menu_selector(ControlLayer::menuCallBackMove) );
 	MenuItem *up = MenuItemFont::create("up", this, menu_selector(ControlLayer::menuCallBackMove) );
 	Menu* menu = Menu::create(down, left, right, up, NULL);
 	
-	//为了方便查找，给每个menuItem设置tag
+	//涓轰簡鏂逛究鏌ユ壘锛岀粰姣忎釜menuItem璁剧疆tag
 	down->setTag(kDown);
 	left->setTag(kLeft);
 	right->setTag(kRight);
 	up->setTag(kUp);
 	
-	//菜单项按间距50水平排列
+	//鑿滃崟椤规寜闂磋窛50姘村钩鎺掑垪
 	menu->alignItemsHorizontallyWithPadding(50);
 	this->addChild(menu);
 	return true;
@@ -52,9 +52,9 @@ void ControlLayer::menuCloseCallback(cocos2d::Ref* pSender)
 void ControlLayer::menuCallBackMove(cocos2d::Ref* pSender)
 {
     Node *node = (Node *) pSender;
-
-	//按钮的tag就是需要行走的方向
+    
+	//鎸夐挳鐨則ag灏辨槸闇�瑕佽璧扮殑鏂瑰悜
 	int targetDirection = node->getTag();
-
+    
 	sGlobal->hero->move((HeroDirection) targetDirection);
 }

@@ -284,6 +284,16 @@
 		0EDE89CB1A4C347800738735 /* sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EDE89BB1A4C347800738735 /* sword.png */; };
 		0EDE89CC1A4C347800738735 /* terrain.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EDE89BC1A4C347800738735 /* terrain.png */; };
 		0EDE89CD1A4C347800738735 /* up_floor.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EDE89BD1A4C347800738735 /* up_floor.png */; };
+		0EDE89F61A4D515600738735 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EDE89F41A4D515600738735 /* GameScene.cpp */; };
+		0EDE8A031A4D549D00738735 /* ControlLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EDE89FF1A4D549D00738735 /* ControlLayer.cpp */; };
+		0EDE8A041A4D549D00738735 /* GameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EDE8A011A4D549D00738735 /* GameLayer.cpp */; };
+		0EDE8A161A4D55B400738735 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EDE8A061A4D55B400738735 /* Enemy.cpp */; };
+		0EDE8A171A4D55B400738735 /* GameMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EDE8A081A4D55B400738735 /* GameMap.cpp */; };
+		0EDE8A181A4D55B400738735 /* Hero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EDE8A0A1A4D55B400738735 /* Hero.cpp */; };
+		0EDE8A191A4D55B400738735 /* NPC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EDE8A0C1A4D55B400738735 /* NPC.cpp */; };
+		0EDE8A1A1A4D55B400738735 /* Teleport.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EDE8A0E1A4D55B400738735 /* Teleport.cpp */; };
+		0EDE8A1B1A4D55B400738735 /* AnimationManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EDE8A111A4D55B400738735 /* AnimationManager.cpp */; };
+		0EDE8A1C1A4D55B400738735 /* Global.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EDE8A131A4D55B400738735 /* Global.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -871,6 +881,27 @@
 		0EDE89BD1A4C347800738735 /* up_floor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = up_floor.png; path = Resources/up_floor.png; sourceTree = "<group>"; };
 		0EDE89CE1A4C348D00738735 /* GameConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameConstants.h; path = Classes/GameConstants.h; sourceTree = "<group>"; };
 		0EDE89CF1A4C348D00738735 /* MTGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTGame.h; path = Classes/MTGame.h; sourceTree = "<group>"; };
+		0EDE89F41A4D515600738735 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
+		0EDE89F51A4D515600738735 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		0EDE89FF1A4D549D00738735 /* ControlLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ControlLayer.cpp; sourceTree = "<group>"; };
+		0EDE8A001A4D549D00738735 /* ControlLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlLayer.h; sourceTree = "<group>"; };
+		0EDE8A011A4D549D00738735 /* GameLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameLayer.cpp; sourceTree = "<group>"; };
+		0EDE8A021A4D549D00738735 /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
+		0EDE8A061A4D55B400738735 /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
+		0EDE8A071A4D55B400738735 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
+		0EDE8A081A4D55B400738735 /* GameMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameMap.cpp; sourceTree = "<group>"; };
+		0EDE8A091A4D55B400738735 /* GameMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMap.h; sourceTree = "<group>"; };
+		0EDE8A0A1A4D55B400738735 /* Hero.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hero.cpp; sourceTree = "<group>"; };
+		0EDE8A0B1A4D55B400738735 /* Hero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hero.h; sourceTree = "<group>"; };
+		0EDE8A0C1A4D55B400738735 /* NPC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NPC.cpp; sourceTree = "<group>"; };
+		0EDE8A0D1A4D55B400738735 /* NPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPC.h; sourceTree = "<group>"; };
+		0EDE8A0E1A4D55B400738735 /* Teleport.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Teleport.cpp; sourceTree = "<group>"; };
+		0EDE8A0F1A4D55B400738735 /* Teleport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Teleport.h; sourceTree = "<group>"; };
+		0EDE8A111A4D55B400738735 /* AnimationManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationManager.cpp; sourceTree = "<group>"; };
+		0EDE8A121A4D55B400738735 /* AnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationManager.h; sourceTree = "<group>"; };
+		0EDE8A131A4D55B400738735 /* Global.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Global.cpp; sourceTree = "<group>"; };
+		0EDE8A141A4D55B400738735 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
+		0EDE8A151A4D55B400738735 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2033,6 +2064,10 @@
 		0ECFFF241A4C32450021F914 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0EDE8A051A4D55B400738735 /* game */,
+				0EDE8A101A4D55B400738735 /* util */,
+				0EDE89FE1A4D549D00738735 /* layer */,
+				0EDE89F31A4D515600738735 /* scene */,
 				0EDE89CE1A4C348D00738735 /* GameConstants.h */,
 				0EDE89CF1A4C348D00738735 /* MTGame.h */,
 				0EDE89A91A4C333100738735 /* AppMacros.h */,
@@ -2042,6 +2077,59 @@
 				0ECFFF291A4C32450021F914 /* HelloWorldScene.cpp */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		0EDE89F31A4D515600738735 /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				0EDE89F41A4D515600738735 /* GameScene.cpp */,
+				0EDE89F51A4D515600738735 /* GameScene.h */,
+			);
+			name = scene;
+			path = Classes/scene;
+			sourceTree = "<group>";
+		};
+		0EDE89FE1A4D549D00738735 /* layer */ = {
+			isa = PBXGroup;
+			children = (
+				0EDE89FF1A4D549D00738735 /* ControlLayer.cpp */,
+				0EDE8A001A4D549D00738735 /* ControlLayer.h */,
+				0EDE8A011A4D549D00738735 /* GameLayer.cpp */,
+				0EDE8A021A4D549D00738735 /* GameLayer.h */,
+			);
+			name = layer;
+			path = Classes/layer;
+			sourceTree = "<group>";
+		};
+		0EDE8A051A4D55B400738735 /* game */ = {
+			isa = PBXGroup;
+			children = (
+				0EDE8A061A4D55B400738735 /* Enemy.cpp */,
+				0EDE8A071A4D55B400738735 /* Enemy.h */,
+				0EDE8A081A4D55B400738735 /* GameMap.cpp */,
+				0EDE8A091A4D55B400738735 /* GameMap.h */,
+				0EDE8A0A1A4D55B400738735 /* Hero.cpp */,
+				0EDE8A0B1A4D55B400738735 /* Hero.h */,
+				0EDE8A0C1A4D55B400738735 /* NPC.cpp */,
+				0EDE8A0D1A4D55B400738735 /* NPC.h */,
+				0EDE8A0E1A4D55B400738735 /* Teleport.cpp */,
+				0EDE8A0F1A4D55B400738735 /* Teleport.h */,
+			);
+			name = game;
+			path = Classes/game;
+			sourceTree = "<group>";
+		};
+		0EDE8A101A4D55B400738735 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				0EDE8A111A4D55B400738735 /* AnimationManager.cpp */,
+				0EDE8A121A4D55B400738735 /* AnimationManager.h */,
+				0EDE8A131A4D55B400738735 /* Global.cpp */,
+				0EDE8A141A4D55B400738735 /* Global.h */,
+				0EDE8A151A4D55B400738735 /* Singleton.h */,
+			);
+			name = util;
+			path = Classes/util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2146,6 +2234,7 @@
 				0ECFFC101A4C32410021F914 /* CCAtlasNode.cpp in Sources */,
 				0ECFFE131A4C32440021F914 /* CCLayerLoader.cpp in Sources */,
 				0ECFFC261A4C32410021F914 /* CCAffineTransform.cpp in Sources */,
+				0EDE8A1C1A4D55B400738735 /* Global.cpp in Sources */,
 				0ECFFBE11A4C32400021F914 /* RootViewController.mm in Sources */,
 				0ECFFD151A4C32420021F914 /* platform.cpp in Sources */,
 				0ECFFE071A4C32440021F914 /* CCLabelBMFontLoader.cpp in Sources */,
@@ -2153,6 +2242,7 @@
 				0ECFFEBE1A4C32440021F914 /* SlotData.cpp in Sources */,
 				0ECFFD521A4C32420021F914 /* CCAnimationCache.cpp in Sources */,
 				0ECFFD7E1A4C32430021F914 /* TGAlib.cpp in Sources */,
+				0EDE8A181A4D55B400738735 /* Hero.cpp in Sources */,
 				0ECFFD9B1A4C32430021F914 /* CCTextFieldTTF.cpp in Sources */,
 				0ECFFE741A4C32440021F914 /* CCTableViewCell.cpp in Sources */,
 				0ECFFF0E1A4C32450021F914 /* cpPolyShape.c in Sources */,
@@ -2181,6 +2271,7 @@
 				0ECFFC521A4C32410021F914 /* CCGrabber.cpp in Sources */,
 				0ECFFCBA1A4C32420021F914 /* CCClippingNode.cpp in Sources */,
 				0ECFFD741A4C32430021F914 /* CCVertex.cpp in Sources */,
+				0EDE8A171A4D55B400738735 /* GameMap.cpp in Sources */,
 				0ECFFC851A4C32410021F914 /* quaternion.c in Sources */,
 				0ECFFEB81A4C32440021F914 /* Skin.cpp in Sources */,
 				0ECFFDCF1A4C32430021F914 /* CDAudioManager.m in Sources */,
@@ -2206,12 +2297,14 @@
 				0ECFFBF11A4C32400021F914 /* CCActionEase.cpp in Sources */,
 				0ECFFC291A4C32410021F914 /* CCArray.cpp in Sources */,
 				0ECFFC9C1A4C32410021F914 /* CCLabelBMFont.cpp in Sources */,
+				0EDE8A1A1A4D55B400738735 /* Teleport.cpp in Sources */,
 				0ECFFDFE1A4C32430021F914 /* CCControlButtonLoader.cpp in Sources */,
 				0ECFFF121A4C32450021F914 /* cpSpace.c in Sources */,
 				0ECFFCB31A4C32420021F914 /* CCMenu.cpp in Sources */,
 				0ECFFD8D1A4C32430021F914 /* ioapi.cpp in Sources */,
 				0ECFFE411A4C32440021F914 /* CCControlHuePicker.cpp in Sources */,
 				0ECFFD581A4C32430021F914 /* CCSpriteBatchNode.cpp in Sources */,
+				0EDE8A161A4D55B400738735 /* Enemy.cpp in Sources */,
 				0ECFFE3D1A4C32440021F914 /* CCControlColourPicker.cpp in Sources */,
 				0ECFFD321A4C32420021F914 /* CCGLProgram.cpp in Sources */,
 				0ECFFD351A4C32420021F914 /* ccGLStateCache.cpp in Sources */,
@@ -2255,6 +2348,7 @@
 				0ECFFC811A4C32410021F914 /* neon_matrix_impl.c in Sources */,
 				0ECFFE0A1A4C32440021F914 /* CCLabelTTFLoader.cpp in Sources */,
 				0ECFFE0D1A4C32440021F914 /* CCLayerColorLoader.cpp in Sources */,
+				0EDE8A1B1A4D55B400738735 /* AnimationManager.cpp in Sources */,
 				0ECFFD4B1A4C32420021F914 /* ccShaders.cpp in Sources */,
 				0ECFFCC71A4C32420021F914 /* CCParticleBatchNode.cpp in Sources */,
 				0ECFFD5B1A4C32430021F914 /* CCSpriteFrame.cpp in Sources */,
@@ -2284,6 +2378,7 @@
 				0ECFFC221A4C32410021F914 /* CCScheduler.cpp in Sources */,
 				0ECFFC791A4C32410021F914 /* mat4stack.c in Sources */,
 				0ECFFC061A4C32410021F914 /* CCActionProgressTimer.cpp in Sources */,
+				0EDE8A191A4D55B400738735 /* NPC.cpp in Sources */,
 				0ECFFD0E1A4C32420021F914 /* EAGLView.mm in Sources */,
 				0ECFFD2E1A4C32420021F914 /* CCScriptSupport.cpp in Sources */,
 				0ECFFC451A4C32410021F914 /* CCZone.cpp in Sources */,
@@ -2308,6 +2403,7 @@
 				0ECFFD5E1A4C32430021F914 /* CCSpriteFrameCache.cpp in Sources */,
 				0ECFFE9A1A4C32440021F914 /* Attachment.cpp in Sources */,
 				0ECFFE971A4C32440021F914 /* AtlasAttachmentLoader.cpp in Sources */,
+				0EDE8A041A4D549D00738735 /* GameLayer.cpp in Sources */,
 				0ECFFD061A4C32420021F914 /* CCLock.cpp in Sources */,
 				0ECFFCC01A4C32420021F914 /* CCProgressTimer.cpp in Sources */,
 				0ECFFE4A1A4C32440021F914 /* CCControlSlider.cpp in Sources */,
@@ -2317,6 +2413,7 @@
 				0ECFFF141A4C32450021F914 /* cpSpaceComponent.c in Sources */,
 				0ECFFDBB1A4C32430021F914 /* CCTMXXMLParser.cpp in Sources */,
 				0ECFFC3C1A4C32410021F914 /* CCObject.cpp in Sources */,
+				0EDE8A031A4D549D00738735 /* ControlLayer.cpp in Sources */,
 				0ECFFBEB1A4C32400021F914 /* CCActionCamera.cpp in Sources */,
 				0ECFFF2A1A4C32450021F914 /* HelloWorldScene.cpp in Sources */,
 				0ECFFD6B1A4C32430021F914 /* CCProfiling.cpp in Sources */,
@@ -2366,6 +2463,7 @@
 				0ECFFCE01A4C32420021F914 /* CCImageCommonWebp.cpp in Sources */,
 				0ECFFE7B1A4C32440021F914 /* LocalStorageAndroid.cpp in Sources */,
 				0ECFFE9D1A4C32440021F914 /* AttachmentLoader.cpp in Sources */,
+				0EDE89F61A4D515600738735 /* GameScene.cpp in Sources */,
 				0ECFFCEA1A4C32420021F914 /* AccelerometerDelegateWrapper.mm in Sources */,
 				0ECFFE781A4C32440021F914 /* LocalStorage.cpp in Sources */,
 				0ECFFE501A4C32440021F914 /* CCControlSwitch.cpp in Sources */,

@@ -10,156 +10,156 @@ GameMap::~GameMap(void)
 	this->unscheduleAllSelectors();
 }
 
-//¾²Ì¬·½·¨£¬ÓÃÓÚÉú³ÉGameMapÊµÀı
+//é™æ€æ–¹æ³•ï¼Œç”¨äºç”ŸæˆGameMapå®ä¾‹
 GameMap* GameMap::gameMapWithTMXFile(const char *tmxFile)
 {
-	//newÒ»¸ö¶ÔÏó
+	//newä¸€ä¸ªå¯¹è±¡
 	GameMap *pRet = new GameMap();
-
-	//µ÷ÓÃinit·½·¨
+    
+	//è°ƒç”¨initæ–¹æ³•
 	if (pRet->initWithTMXFile(tmxFile))
 	{
-		//µ÷ÓÃ¶îÍâµÄinit·½·¨
+		//è°ƒç”¨é¢å¤–çš„initæ–¹æ³•
 		pRet->extraInit();
-
-		//½«ÊµÀı·ÅÈëautorelease³Ø£¬Í³Ò»ÓÉÒıÇæ¿ØÖÆ¶ÔÏóµÄÉúÃüÖÜÆÚ
+        
+		//å°†å®ä¾‹æ”¾å…¥autoreleaseæ± ï¼Œç»Ÿä¸€ç”±å¼•æ“æ§åˆ¶å¯¹è±¡çš„ç”Ÿå‘½å‘¨æœŸ
 		pRet->autorelease();
 		return pRet;
 	}
-
+    
 	CC_SAFE_DELETE(pRet);
 	return NULL;
 }
 
-//TliedMap¶îÍâµÄ³õÊ¼»¯·½·¨
+//TliedMapé¢å¤–çš„åˆå§‹åŒ–æ–¹æ³•
 void GameMap::extraInit()
 {
-	//¿ªÆô¸÷¸öÍ¼²ãµÄÎÆÀí¿¹¾â³İ
+	//å¼€å¯å„ä¸ªå›¾å±‚çš„çº¹ç†æŠ—é”¯é½¿
 	enableAnitiAliasForEachLayer();
-
-	//³õÊ¼»¯¸÷²ã¶ÔÏó
+    
+	//åˆå§‹åŒ–å„å±‚å¯¹è±¡
 	floorLayer = this->getLayer("floor");
 	wallLayer = this->getLayer("wall");
 	itemLayer = this->getLayer("item");
 	doorLayer = this->getLayer("door");
-
+    
 	initEnemy();
 	initObject();
 }
 
 void GameMap::initEnemy()
 {
-	//»ñÈ¡¹ÖÎï²ã
+	//è·å–æ€ªç‰©å±‚
 	enemyLayer = this->getLayer("enemy");
-
+    
 	Size s = enemyLayer->getLayerSize();
-
-	//±éÀúenemy²ã£¬½«´æÔÚµÄ¹ÖÎï±£´æµ½Êı×éÖĞ
-	for (int x = 0; x < s.width; x++) 
+    
+	//éå†enemyå±‚ï¼Œå°†å­˜åœ¨çš„æ€ªç‰©ä¿å­˜åˆ°æ•°ç»„ä¸­
+	for (int x = 0; x < s.width; x++)
 	{
-		for (int y = 0; y < s.height; y++) 
+		for (int y = 0; y < s.height; y++)
 		{
 			int gid = enemyLayer->getTileGIDAt(Point(x, y));
-			if (gid != 0) 
+			if (gid != 0)
 			{
 				Enemy* enemy = new Enemy();
-
-				//±£´æ¹ÖÎï×ø±ê
+                
+				//ä¿å­˜æ€ªç‰©åæ ‡
 				enemy->position = Point(x, y);
-
-				//±£´æ¹ÖÎïÆğÊ¼µÄÍ¼¿éID
+                
+				//ä¿å­˜æ€ªç‰©èµ·å§‹çš„å›¾å—ID
 				enemy->startGID = gid;
-
-				//Ìí¼Ó¹ÖÎï¶ÔÏóµ½Êı×é
+                
+				//æ·»åŠ æ€ªç‰©å¯¹è±¡åˆ°æ•°ç»„
 				enemyArray.pushBack(enemy);
 			}
 		}
 	}
-
-	//ÓÃÓÚ¸üĞÂµĞÈË¶¯»­
+    
+	//ç”¨äºæ›´æ–°æ•ŒäººåŠ¨ç”»
 	schedule(schedule_selector(GameMap::updateEnemyAnimation), 0.2f);
 }
 
-//¸üĞÂ¹ÖÎïµÄÍ¼¿é
+//æ›´æ–°æ€ªç‰©çš„å›¾å—
 void GameMap::updateEnemyAnimation(float time)
-{	
+{
 	Vector<Enemy*>::iterator  iter;
 	Enemy *enemy, *needRemove = NULL;
-
-	//±éÀú±£´æËùÓĞ¹ÖÎï¶ÔÏóµÄÊı×é
-	for (iter = enemyArray.begin(); iter != enemyArray.end(); ++iter) 
+    
+	//éå†ä¿å­˜æ‰€æœ‰æ€ªç‰©å¯¹è±¡çš„æ•°ç»„
+	for (iter = enemyArray.begin(); iter != enemyArray.end(); ++iter)
 	{
 		enemy = *iter;
-		if (enemy != NULL) 
+		if (enemy != NULL)
 		{
-			//»ñÈ¡¹ÖÎïµ±Ç°µÄÍ¼¿éID
+			//è·å–æ€ªç‰©å½“å‰çš„å›¾å—ID
 			int gid = enemyLayer->getTileGIDAt(enemy->position);
-
-			//Èç¹û¹ÖÎï±»É¾³ıÁË£¬ĞèÒª°ÑËüÔÚenemyArrayÖĞÒ²É¾³ı
+            
+			//å¦‚æœæ€ªç‰©è¢«åˆ é™¤äº†ï¼Œéœ€è¦æŠŠå®ƒåœ¨enemyArrayä¸­ä¹Ÿåˆ é™¤
 			if (gid == 0)
 			{
 				needRemove = enemy;
 				continue;
 			}
 			gid++;
-
-			//Èç¹ûÏÂÒ»¸öÍ¼¿éID ÆğÊ¼Í¼¿éID
-			if (gid - enemy->startGID > 3) 
+            
+			//å¦‚æœä¸‹ä¸€ä¸ªå›¾å—ID èµ·å§‹å›¾å—ID
+			if (gid - enemy->startGID > 3)
 			{
 				gid = enemy->startGID;
 			}
-
-			//¸ø¹ÖÎïÉèÖÃĞÂµÄÍ¼¿é
+            
+			//ç»™æ€ªç‰©è®¾ç½®æ–°çš„å›¾å—
 			enemyLayer->setTileGID(gid, enemy->position);
 		}
 	}
-
-	//É¾³ı±»ÏûÃğµÄ¹ÖÎï
+    
+	//åˆ é™¤è¢«æ¶ˆç­çš„æ€ªç‰©
 	if (needRemove != NULL)
 	{
 		enemyArray.eraseObject(needRemove);
 	}
 }
 
-//³õÊ¼»¯¶ÔÏó²ã
+//åˆå§‹åŒ–å¯¹è±¡å±‚
 void GameMap::initObject()
 {
-	//»ñÈ¡¶ÔÏó²ã
+	//è·å–å¯¹è±¡å±‚
 	TMXObjectGroup* group = this->objectGroupNamed("object");
-
-	//»ñÈ¡¶ÔÏó²ãÄÚµÄËùÓĞ¶ÔÏó
+    
+	//è·å–å¯¹è±¡å±‚å†…çš„æ‰€æœ‰å¯¹è±¡
 	const ValueVector &objects = group->getObjects();
-
-	//±éÀúËùÓĞ¶ÔÏó
-	for(ValueVector::const_iterator it = objects.begin(); 
-		it != objects.end(); it++) 
+    
+	//éå†æ‰€æœ‰å¯¹è±¡
+	for(ValueVector::const_iterator it = objects.begin();
+		it != objects.end(); it++)
 	{
 		const ValueMap &dict = (*it).asValueMap();
-
+        
 		std::string key = "x";
-
-		//»ñÈ¡x×ø±ê
+        
+		//è·å–xåæ ‡
 		int x = dict.at(key).asInt();
 		key = "y";
-
-		//»ñÈ¡y×ø±ê
+        
+		//è·å–yåæ ‡
 		int y = dict.at(key).asInt();
 		Point tileCoord = tileCoordForPosition(Point(x, y));
-
-		//¼ÆËãÎ¨Ò»ID
+        
+		//è®¡ç®—å”¯ä¸€ID
 		int index = tileCoord.x + tileCoord.y * this->getMapSize().width;
 		key = "type";
-
-		//»ñÈ¡¶ÔÏóÀà±ğ
+        
+		//è·å–å¯¹è±¡ç±»åˆ«
 		std::string type = dict.at(key).asString();
-
-		//Èç¹ûÀàĞÍÊÇ´«ËÍÃÅ
+        
+		//å¦‚æœç±»å‹æ˜¯ä¼ é€é—¨
 		if (type == "teleport")
 		{
 			Teleport *teleport = new Teleport(dict, x, y);
 			teleportDict.insert(index, teleport);
 		}
-		//Èç¹ûÀàĞÍÊÇNPC¶ÔÏó
+		//å¦‚æœç±»å‹æ˜¯NPCå¯¹è±¡
 		else if (type == "npc")
 		{
 			NPC *npc = new NPC(dict, x, y);
@@ -171,23 +171,23 @@ void GameMap::initObject()
 void GameMap::enableAnitiAliasForEachLayer()
 {
 	const Vector<Node *>&  childrenArray = this->getChildren();
-
-	//±éÀúTilemapµÄËùÓĞÍ¼²ã
+    
+	//éå†Tilemapçš„æ‰€æœ‰å›¾å±‚
 	for (size_t i = 0, count = childrenArray.size(); i < count; i++)
 	{
 		SpriteBatchNode* child = (SpriteBatchNode*)childrenArray.at(i);
-
+        
 		if (!child)
 		{
 			break;
 		}
-
-		//¸øÍ¼²ãµÄÎÆÀí¿ªÆô¿¹¾â³İ
+        
+		//ç»™å›¾å±‚çš„çº¹ç†å¼€å¯æŠ—é”¯é½¿
 		child->getTexture()->setAntiAliasTexParameters();
 	}
 }
 
-//´Ócocos2d-x×ø±ê×ª»»ÎªTilemap×ø±ê
+//ä»cocos2d-xåæ ‡è½¬æ¢ä¸ºTilemapåæ ‡
 Point GameMap::tileCoordForPosition(Point position)
 {
 	int x = position.x / this->getTileSize().width;
@@ -195,54 +195,54 @@ Point GameMap::tileCoordForPosition(Point position)
 	return Point(x, y);
 }
 
-//´ÓTilemap×ø±ê×ª»»Îªcocos2d-x×ø±ê
+//ä»Tilemapåæ ‡è½¬æ¢ä¸ºcocos2d-xåæ ‡
 Point GameMap::positionForTileCoord(Point tileCoord)
 {
 	Point pos = Point((tileCoord.x * this->getTileSize().width), ((this->getMapSize().height - tileCoord.y - 1) * this->getTileSize().height));
 	return pos;
 }
 
-//¸üĞÂ¹ÖÎïÕ½¶·Ê±µÄÑÕÉ«×´Ì¬
+//æ›´æ–°æ€ªç‰©æˆ˜æ–—æ—¶çš„é¢œè‰²çŠ¶æ€
 void GameMap::updateEnemyHitEffect(float time)
 {
-	//¸üĞÂ´ÎÊı¼ÓÒ»
+	//æ›´æ–°æ¬¡æ•°åŠ ä¸€
 	fightCount++;
-
+    
 	if (fightCount % 2 == 1)
 	{
-		//ÉèÖÃ¹ÖÎïspriteÑÕÉ«Îª°×É«
+		//è®¾ç½®æ€ªç‰©spriteé¢œè‰²ä¸ºç™½è‰²
 		fightingEnemy->setColor(ccWHITE);
 	}
 	else
 	{
-		//ÉèÖÃ¹ÖÎïspriteÑÕÉ«ÎªºìÉ«
+		//è®¾ç½®æ€ªç‰©spriteé¢œè‰²ä¸ºçº¢è‰²
 		fightingEnemy->setColor(ccRED);
 	}
-
-	//ÇĞ»»5´ÎºóÈ¡Ïû¶¨Ê±Æ÷
+    
+	//åˆ‡æ¢5æ¬¡åå–æ¶ˆå®šæ—¶å™¨
 	if (fightCount == 5)
 	{
 		unschedule(schedule_selector(GameMap::updateEnemyHitEffect));
 	}
 }
 
-//ÏÔÊ¾¹ÖÎï´ò»÷¶¯»­
+//æ˜¾ç¤ºæ€ªç‰©æ‰“å‡»åŠ¨ç”»
 void GameMap::showEnemyHitEffect(Point tileCoord)
 {
-	//¸üĞÂ´ÎÊı
+	//æ›´æ–°æ¬¡æ•°
 	fightCount = 0;
-
-	//»ñÈ¡¹ÖÎï¶ÔÓ¦µÄCCSprite¶ÔÏó
+    
+	//è·å–æ€ªç‰©å¯¹åº”çš„CCSpriteå¯¹è±¡
 	fightingEnemy = enemyLayer->tileAt(tileCoord);
-
+    
 	if (fightingEnemy == NULL)
 	{
 		return;
 	}
-
-	//ÉèÖÃ¹ÖÎïspriteÑÕÉ«ÎªºìÉ«
+    
+	//è®¾ç½®æ€ªç‰©spriteé¢œè‰²ä¸ºçº¢è‰²
 	fightingEnemy->setColor(ccRED);
-
-	//Æô¶¯¶¨Ê±Æ÷¸üĞÂ´ò»÷×´Ì¬
+    
+	//å¯åŠ¨å®šæ—¶å™¨æ›´æ–°æ‰“å‡»çŠ¶æ€
 	this->schedule(schedule_selector(GameMap::updateEnemyHitEffect), 0.18f);
 }

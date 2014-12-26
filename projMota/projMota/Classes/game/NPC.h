@@ -8,26 +8,26 @@ USING_NS_CC;
 class NPC : public Ref
 {
 public:
-	//¹¹Ôìº¯ÊıÖĞÒª¸ù¾İ´«µİµÄÊôĞÔ±í³õÊ¼»¯¸÷¸ö±äÁ¿
+	//æ„é€ å‡½æ•°ä¸­è¦æ ¹æ®ä¼ é€’çš„å±æ€§è¡¨åˆå§‹åŒ–å„ä¸ªå˜é‡
 	NPC(const ValueMap &dict, int x, int y);
 	~NPC(void);
-
-	//ÓÃÓÚÏÔÊ¾npcµÄ¾«Áé
+    
+	//ç”¨äºæ˜¾ç¤ºnpcçš„ç²¾çµ
 	Sprite *npcSprite;
-
-	//±£´æÔÚTileMapÖĞÅäÖÃµÄnameÏî
+    
+	//ä¿å­˜åœ¨TileMapä¸­é…ç½®çš„nameé¡¹
 	int npcId;
-
-	//npcËùÔÚµÄTileMap×ø±ê
+    
+	//npcæ‰€åœ¨çš„TileMapåæ ‡
 	Point tileCoord;
-
-	//Í¼Æ¬ÎÆÀíµÄÎÄ¼şÂ·¾¶
+    
+	//å›¾ç‰‡çº¹ç†çš„æ–‡ä»¶è·¯å¾„
 	std::string imagePath;
-
-	//ÎÆÀíµÄRect
+    
+	//çº¹ç†çš„Rect
 	Rect rect;
-
-	//¶ÔÓ¦ÅäÖÃÖĞµÄtypeÏî
+    
+	//å¯¹åº”é…ç½®ä¸­çš„typeé¡¹
 	std::string type;
 };
 

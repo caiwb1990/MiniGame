@@ -10,27 +10,27 @@ class AnimationManager : public Singleton<AnimationManager>
 public:
 	AnimationManager();
 	~AnimationManager();
-
-	//³õÊ¼»¯¶¯»­Ä£°æ»º´æ±í
+    
+	//åˆå§‹åŒ–åŠ¨ç”»æ¨¡ç‰ˆç¼“å­˜è¡¨
 	bool initAnimationMap();
-
-	//¸ù¾İÃû×ÖµÃµ½Ò»¸ö¶¯»­Ä£°å
+    
+	//æ ¹æ®åå­—å¾—åˆ°ä¸€ä¸ªåŠ¨ç”»æ¨¡æ¿
 	Animation* getAnimation(int key);
-
-	//´´½¨Ò»¸ö¶¯»­ÊµÀı
+    
+	//åˆ›å»ºä¸€ä¸ªåŠ¨ç”»å®ä¾‹
 	Animate* createAnimate(int key);
-
-	//´´½¨Ò»¸ö¶¯»­ÊµÀı
+    
+	//åˆ›å»ºä¸€ä¸ªåŠ¨ç”»å®ä¾‹
 	Animate* createAnimate(const char* key);
-
+    
 protected:
-	//¼ÓÔØÓÂÊ¿ĞĞ×ß¶¯»­Ä£°æ
+	//åŠ è½½å‹‡å£«è¡Œèµ°åŠ¨ç”»æ¨¡ç‰ˆ
 	Animation* createHeroMovingAnimationByDirection(HeroDirection direction);
 	Animation* createFightAnimation();
 	Animation* createNPCAnimation();
 };
 
-//¶¨Òå¶¯»­¹ÜÀíÆ÷ÊµÀıµÄ±ğÃû
+//å®šä¹‰åŠ¨ç”»ç®¡ç†å™¨å®ä¾‹çš„åˆ«å
 #define sAnimationMgr AnimationManager::instance()
 
 #endif

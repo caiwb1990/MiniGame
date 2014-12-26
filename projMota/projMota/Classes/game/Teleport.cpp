@@ -3,28 +3,28 @@
 Teleport::Teleport(const ValueMap &dict, int x, int y)
 {
 	Point position = Point(x, y);
-
-	//´«ËÍµãËùÔÚµÄTileMapÎ»ÖÃ
+    
+	//ä¼ é€ç‚¹æ‰€åœ¨çš„TileMapä½ç½®
 	tileCoord = sGlobal->gameMap->tileCoordForPosition(Point(x, y));
-
-	//µÃ³öÓÂÊ¿ÔÚÄ¿±ê²ãµÄÆðÊ¼Î»ÖÃ
+    
+	//å¾—å‡ºå‹‡å£«åœ¨ç›®æ ‡å±‚çš„èµ·å§‹ä½ç½®
 	std::string key = "heroTileCoordX";
 	int x1 = dict.at(key).asInt();
-
+    
 	key = "heroTileCoordY";
 	int y1 = dict.at(key).asInt();
-
+    
 	heroTileCoord = Point(x1, y1);
-
-	//È¡µÃÄ¿±êµØÍ¼µÄ²ãÊý
+    
+	//å–å¾—ç›®æ ‡åœ°å›¾çš„å±‚æ•°
 	key = "targetMap";
 	targetMap = dict.at(key).asInt();
-
-	//»ñÈ¡imageÏî
+    
+	//èŽ·å–imageé¡¹
 	key = "image";
 	imagePath = dict.at(key).asString();
-
-	//´´½¨ÓÃÓÚÏÔÊ¾TeleportµÄ¾«Áé
+    
+	//åˆ›å»ºç”¨äºŽæ˜¾ç¤ºTeleportçš„ç²¾çµ
 	teleportSprite = Sprite::create(imagePath);
 	teleportSprite->setAnchorPoint(Point::ZERO);
 	teleportSprite->setPosition(position);

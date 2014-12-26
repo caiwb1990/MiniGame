@@ -11,12 +11,13 @@
 
 #include "cocos2d.h"
 #include "SimpleAudioEngine.h"
-#include "gameScene.h"
 
 #include "AppMacros.h"
 
 #include <vector>
 #include <string>
+
+#include "MTGame.h"
 
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -30,6 +31,9 @@ AppDelegate::AppDelegate()
 
 AppDelegate::~AppDelegate()
 {
+    SimpleAudioEngine::end();
+    
+    //sAnimationMgr->release();
 }
 
 bool AppDelegate::applicationDidFinishLaunching()
@@ -98,8 +102,11 @@ bool AppDelegate::applicationDidFinishLaunching()
     // set FPS. the default value is 1.0/60 if you don't call this
     pDirector->setAnimationInterval(1.0 / 60);
 
+
+    sAnimationMgr->initAnimationMap();
+    
     // create a scene. it's an autorelease object
-    CCScene *pScene = game2048::scene();
+    CCScene *pScene = GameScene::create()();
 
     // run
     pDirector->runWithScene(pScene);
