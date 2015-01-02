@@ -80,6 +80,7 @@ void GameMap::initEnemy()
 	schedule(schedule_selector(GameMap::updateEnemyAnimation), 0.2f);
 }
 
+
 //更新怪物的图块
 void GameMap::updateEnemyAnimation(float time)
 {

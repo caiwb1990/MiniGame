@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E2A05DE1-ACAC-4B57-88AA-3FF65F0B28C7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>projMota</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>92C31B0E-2AA7-4864-8D08-82D9AA0DD527</key>
+		<string>https://github.com/caiwb1990/MiniGame.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>projMota/projMota.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>92C31B0E-2AA7-4864-8D08-82D9AA0DD527</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/caiwb1990/MiniGame.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>92C31B0E-2AA7-4864-8D08-82D9AA0DD527</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>92C31B0E-2AA7-4864-8D08-82D9AA0DD527</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MiniGame</string>
+		</dict>
+	</array>
+</dict>
+</plist>
