@@ -8,6 +8,12 @@ function MainScene:ctor()
             UILabelType = 2, text = "Hello, World", size = 64})
         :align(display.CENTER, display.cx, display.cy)
         :addTo(self)
+        
+    -- background
+    local background = display.newSprite("image/background.png",display.cx,display.cy)
+        :addTo(self)
+    -- self:addChild(background);
+    
 end
 
 function MainScene:onEnter()
