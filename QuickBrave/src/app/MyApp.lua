@@ -11,6 +11,8 @@ end
 
 function MyApp:run()
     cc.FileUtils:getInstance():addSearchPath("res/")
+    display.addSpriteFrames("image/role.plist", "image/role.pvr.ccz");
+
     self:enterScene("MainScene")
 end
 
