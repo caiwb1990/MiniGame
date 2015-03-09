@@ -13,13 +13,15 @@ function MainScene:ctor()
         :addTo(self)
     -- self:addChild(background);
  
-    local hero = display.newSprite("#player1-1-1.png")
-    --    :setPosition(display.left, display.cy)
-    --    :addTo(self)   
-    hero:setPosition(display.cx, display.cy)
+    -- hero
+    local hero = Actor.new() --display.newSprite("#player1-1-1.png")
+     --   :setPosition(display.cx, display.cy)
+      --  :addTo(self)   
+    hero:setPosition(display.left + hero:getContentSize().width/2, display.cy)
     self:addChild(hero)
 
-
+    -- enemy 
+    
 
     --cc.ui.UILabel.new({
     --        UILabelType = 2, text = "Hello, World", size = 64})
