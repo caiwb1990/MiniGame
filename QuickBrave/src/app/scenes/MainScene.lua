@@ -1,4 +1,5 @@
 local Actor = import("..roles.Actor")
+local Enemy = import("..roles.Enemy")
 
 local MainScene = class("MainScene", function()
     return display.newScene("MainScene")
@@ -21,7 +22,9 @@ function MainScene:ctor()
     self:addChild(hero)
 
     -- enemy 
-    
+    local enemy = Enemy.new() 
+    enemy:setPosition(display.right - enemy:getContentSize().width/2, display.cy)
+    self:addChild(enemy)
 
     --cc.ui.UILabel.new({
     --        UILabelType = 2, text = "Hello, World", size = 64})
