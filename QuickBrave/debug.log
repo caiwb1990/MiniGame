@@ -58,3 +58,345 @@ libpng warning: iCCP: known incorrect sRGB profile
 [LUA-print] [INFO] # display.c_bottom             = -320.00
 [LUA-print] [INFO] #
 libpng warning: iCCP: known incorrect sRGB profile
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
+[LUA-print] ----------------------------------------
+[LUA-print] LUA ERROR: [string "app/scenes/MainScene.lua"]:42: attempt to index global 'hero' (a nil value)
+
+[LUA-print] 
+stack traceback:
+	[string "app/scenes/MainScene.lua"]:42: in function <[string "app/scenes/MainScene.lua"]:40>
+	(tail call): ?
+	[string "framework/cocos2dx/NodeEx.lua"]:394: in function <[string "framework/cocos2dx/NodeEx.lua"]:348>
+[LUA-print] ----------------------------------------
