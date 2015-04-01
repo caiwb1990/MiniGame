@@ -36,7 +36,30 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
-
+    
+    
+    //屏幕大小
+    auto screenSize = glview->getFrameSize();
+    //设计分辨率大小
+    auto designSize = Size(320, 480);
+    //资源大小
+    auto resourceSize = Size(640, 960);
+    
+    std::vector<std::string> searchPaths;
+    
+    if (screenSize.height > 960) {	//640x1136
+        designSize = Size(320, 568);
+        searchPaths.push_back("hd");
+    } else {
+        searchPaths.push_back("hd");
+    }
+    
+    director->setContentScaleFactor(resourceSize.width/designSize.width); //默认为1.0f
+    
+    FileUtils::getInstance()->setSearchPaths(searchPaths);
+    
+    glview->setDesignResolutionSize(designSize.width, designSize.height, ResolutionPolicy::FIXED_WIDTH);
+    
     // create a scene. it's an autorelease object
     auto scene = HelloWorld::createScene();
 
