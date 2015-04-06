@@ -11,6 +11,8 @@
 
 #include "cocos2d.h"
 
+USING_NS_CC;
+
 using namespace std;
 
 
@@ -22,5 +24,7 @@ public:
     
     //Win32将GBK编码转换为UTF-8
     static string gbk_to_utf8(const string text);
+    
+    static string getUTF8Char(const string key);
 };
 #endif /* defined(__HellShoot__HellcUtils__) */

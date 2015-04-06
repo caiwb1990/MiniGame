@@ -58,3 +58,31 @@ string HellcUtils::gbk_to_utf8(const string text)
 #endif
     
 }
+
+
+
+string HellcUtils::getUTF8Char(const string key)
+{
+    auto sharedFileUtils = FileUtils::getInstance();
+    
+    std::string fullPathForFilename = sharedFileUtils->fullPathForFilename("utf8_char.plist");
+    
+    bool isExist = false;
+    isExist = sharedFileUtils->isFileExist(fullPathForFilename);
+    if (!isExist) {
+        log("utf8_char.plist doesn't exist.");
+        return "";
+    }
+    
+    ValueMap map = sharedFileUtils->getValueMapFromFile(fullPathForFilename);
+    Value value =  map[key];
+    
+    //log("%s - %s",key.c_str(), value.asString().c_str());
+    
+    if (value.isNull()) {
+        log("%s doesn't exist.",key.c_str());
+        return "";
+    }
+    return value.asString();
+    
+}
