@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E6BBF4C1AD2DFEF00FB81F7 /* utf8_char.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E6BBF4B1AD2DFEF00FB81F7 /* utf8_char.plist */; };
+		0E6BBF4F1AD2E10C00FB81F7 /* sound in Resources */ = {isa = PBXBuildFile; fileRef = 0E6BBF4E1AD2E10C00FB81F7 /* sound */; };
 		0EC2363E1ACC4FC5009C44B4 /* hd in Resources */ = {isa = PBXBuildFile; fileRef = 0EC2363D1ACC4FC5009C44B4 /* hd */; };
 		0EC236421ACD9256009C44B4 /* HellcUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EC236401ACD9256009C44B4 /* HellcUtils.cpp */; };
 		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
@@ -104,6 +105,8 @@
 
 /* Begin PBXFileReference section */
 		0E6BBF4B1AD2DFEF00FB81F7 /* utf8_char.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = utf8_char.plist; sourceTree = "<group>"; };
+		0E6BBF4D1AD2E0D500FB81F7 /* HellcHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HellcHeader.h; sourceTree = "<group>"; };
+		0E6BBF4E1AD2E10C00FB81F7 /* sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sound; sourceTree = "<group>"; };
 		0EC2363D1ACC4FC5009C44B4 /* hd */ = {isa = PBXFileReference; lastKnownFileType = folder; path = hd; sourceTree = "<group>"; };
 		0EC236401ACD9256009C44B4 /* HellcUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HellcUtils.cpp; sourceTree = "<group>"; };
 		0EC236411ACD9256009C44B4 /* HellcUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HellcUtils.h; sourceTree = "<group>"; };
@@ -278,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				0E6BBF4B1AD2DFEF00FB81F7 /* utf8_char.plist */,
+				0E6BBF4E1AD2E10C00FB81F7 /* sound */,
 				521A8EA819F11F5000D177D7 /* fonts */,
 				3EACC98E19EE6D4300EB3C5E /* res */,
 				0EC2363D1ACC4FC5009C44B4 /* hd */,
@@ -292,6 +296,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0E6BBF4D1AD2E0D500FB81F7 /* HellcHeader.h */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
@@ -458,6 +463,7 @@
 				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
+				0E6BBF4F1AD2E10C00FB81F7 /* sound in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
