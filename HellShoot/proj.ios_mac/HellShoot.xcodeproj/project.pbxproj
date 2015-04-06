@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E6BBF4C1AD2DFEF00FB81F7 /* utf8_char.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E6BBF4B1AD2DFEF00FB81F7 /* utf8_char.plist */; };
 		0E6BBF4F1AD2E10C00FB81F7 /* sound in Resources */ = {isa = PBXBuildFile; fileRef = 0E6BBF4E1AD2E10C00FB81F7 /* sound */; };
+		0E6BBF521AD2E43100FB81F7 /* MenuBaseLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E6BBF501AD2E43100FB81F7 /* MenuBaseLayer.cpp */; };
 		0EC2363E1ACC4FC5009C44B4 /* hd in Resources */ = {isa = PBXBuildFile; fileRef = 0EC2363D1ACC4FC5009C44B4 /* hd */; };
 		0EC236421ACD9256009C44B4 /* HellcUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EC236401ACD9256009C44B4 /* HellcUtils.cpp */; };
 		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
@@ -107,6 +108,8 @@
 		0E6BBF4B1AD2DFEF00FB81F7 /* utf8_char.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = utf8_char.plist; sourceTree = "<group>"; };
 		0E6BBF4D1AD2E0D500FB81F7 /* HellcHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HellcHeader.h; sourceTree = "<group>"; };
 		0E6BBF4E1AD2E10C00FB81F7 /* sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sound; sourceTree = "<group>"; };
+		0E6BBF501AD2E43100FB81F7 /* MenuBaseLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuBaseLayer.cpp; sourceTree = "<group>"; };
+		0E6BBF511AD2E43100FB81F7 /* MenuBaseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuBaseLayer.h; sourceTree = "<group>"; };
 		0EC2363D1ACC4FC5009C44B4 /* hd */ = {isa = PBXFileReference; lastKnownFileType = folder; path = hd; sourceTree = "<group>"; };
 		0EC236401ACD9256009C44B4 /* HellcUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HellcUtils.cpp; sourceTree = "<group>"; };
 		0EC236411ACD9256009C44B4 /* HellcUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HellcUtils.h; sourceTree = "<group>"; };
@@ -301,6 +304,8 @@
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
 				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
+				0E6BBF501AD2E43100FB81F7 /* MenuBaseLayer.cpp */,
+				0E6BBF511AD2E43100FB81F7 /* MenuBaseLayer.h */,
 				0EC236401ACD9256009C44B4 /* HellcUtils.cpp */,
 				0EC236411ACD9256009C44B4 /* HellcUtils.h */,
 			);
@@ -506,6 +511,7 @@
 			files = (
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
+				0E6BBF521AD2E43100FB81F7 /* MenuBaseLayer.cpp in Sources */,
 				0EC236421ACD9256009C44B4 /* HellcUtils.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
