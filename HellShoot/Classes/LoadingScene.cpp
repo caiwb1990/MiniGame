@@ -43,17 +43,46 @@ bool Loading::init()
     
     // add "HelloWorld" splash screen"
     auto bg = TMXTiledMap::create("map/red_bg.tmx");
+    if(bg)
+        this->addChild(bg);
     
-    // add the sprite as a child to this layer
-    this->addChild(bg);
+    auto logoSpr =  Sprite::createWithSpriteFrameName("logo.png");
+    if(logoSpr)
+    {
+        this->addChild(logoSpr);
+        logoSpr->setPosition(Vec2(visibleSize.width/2, visibleSize.height/2));
+    }
     
-    auto logo =  Sprite::createWithSpriteFrameName("logo.png");
-    this->addChild(logo);
-    logo->setPosition(Vec2(visibleSize.width/2, visibleSize.height/2));
+    auto loadingSpr =  Sprite::createWithSpriteFrameName("loding4.png");
+    if(loadingSpr)
+    {
+        this->addChild(loadingSpr);
+        loadingSpr->setPosition(logoSpr->getPosition() - Vec2(0, logoSpr->getContentSize().height / 2 + 30));
+    }
     
-    auto sprite =  Sprite::createWithSpriteFrameName("loding4.png");
-    this->addChild(sprite);
-    sprite->setPosition(logo->getPosition() - Vec2(0, logo->getContentSize().height / 2 + 30));
-   
+    
+    
+    /////////Anim
+    Animation* animation = Animation::create();
+    if(animation)
+    {
+        for( int i=1; i<= 4; i++)
+        {
+            __String *frameName = __String::createWithFormat("loding%d.png",i);
+            log("frameName = %s",frameName->getCString());
+            SpriteFrame *spriteFrame = SpriteFrameCache::getInstance()->getSpriteFrameByName(frameName->getCString());
+            animation->addSpriteFrame(spriteFrame);
+        }
+        
+        animation->setDelayPerUnit(0.5f);           //设置两个帧播放时间
+        animation->setRestoreOriginalFrame(true);    //动画执行后还原初始状态
+        
+        Animate* loadingAction = Animate::create(animation);
+        if(loadingAction && loadingSpr)
+            loadingSpr->runAction(RepeatForever::create(loadingAction));
+    }
+    
+    
+    /////anim end
     return true;
 }
