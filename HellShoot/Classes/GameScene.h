@@ -17,7 +17,7 @@ class GamePlayLayer : public cocos2d::Layer
 {
 private:
     
-
+    cocos2d::Menu* menu;
     
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
@@ -26,6 +26,12 @@ public:
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
     virtual bool init();
     virtual void onExit();
+    
+    virtual void onEnter();
+    
+    void menuPauseCallback(cocos2d::Ref* pSender);
+    void menuBackCallback(cocos2d::Ref* pSender);
+    void menuResumeCallback(cocos2d::Ref* pSender);
     
     void initBG();
     
