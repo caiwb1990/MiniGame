@@ -123,7 +123,7 @@ void Loading::loadingTextureCallBack(Texture2D *texture)
         case 2:
             SpriteFrameCache::getInstance()->addSpriteFramesWithFile("texture/gameplay_texture.plist",texture);
             log("gamepla textrue ok.");
-            this->schedule(schedule_selector(Loading::delayCall),1,1,3);
+            this->schedule(schedule_selector(Loading::delayCall),1,1,2);
             //float interval, unsigned int repeat, float delay
             break;
     }

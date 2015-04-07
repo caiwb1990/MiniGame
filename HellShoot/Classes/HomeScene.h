@@ -28,5 +28,6 @@ public:
     void menuItemCallback(cocos2d::Ref *sender);
     
     // implement the "static create()" method manually
+    CREATE_FUNC(HomeMenuLayer);
 };
 #endif /* defined(__HellShoot__HomeScene__) */
