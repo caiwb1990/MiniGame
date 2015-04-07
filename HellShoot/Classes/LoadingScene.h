@@ -18,7 +18,9 @@
 class Loading : public cocos2d::Layer
 {
 private:
-    
+    void delayCall(float dt);
+    void loadingTextureCallBack(cocos2d::Texture2D* texture);
+    int m_nNumberOfLoaded;
     
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer

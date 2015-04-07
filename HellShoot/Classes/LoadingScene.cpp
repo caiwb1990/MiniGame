@@ -81,8 +81,54 @@ bool Loading::init()
         if(loadingAction && loadingSpr)
             loadingSpr->runAction(RepeatForever::create(loadingAction));
     }
-    
-    
     /////anim end
+    
+    
+    //texture cache
+    m_nNumberOfLoaded = 0;
+    
+    Director::getInstance()->getTextureCache()->addImageAsync("texture/home_texture.png",
+                CC_CALLBACK_1(Loading::loadingTextureCallBack, this));
+    
+    Director::getInstance()->getTextureCache()->addImageAsync("texture/setting_texture.png",CC_CALLBACK_1(Loading::loadingTextureCallBack, this));
+    
+    Director::getInstance()->getTextureCache()->addImageAsync("texture/gameplay_texture.png", CC_CALLBACK_1(Loading::loadingTextureCallBack, this));
+    
+    //cache end
+    
+    
+    
     return true;
 }
+
+
+
+void Loading::loadingTextureCallBack(Texture2D *texture)
+{
+    
+    switch (m_nNumberOfLoaded++)
+    {
+        case 0:
+            SpriteFrameCache::getInstance()->addSpriteFramesWithFile("texture/home_texture.plist",texture);
+            log("home textrue ok.");
+            break;
+        case 1:
+            SpriteFrameCache::getInstance()->addSpriteFramesWithFile("texture/setting_texture.plist",texture);
+            log("setting textrue ok.");
+            break;
+        case 2:
+            SpriteFrameCache::getInstance()->addSpriteFramesWithFile("texture/gameplay_texture.plist",texture);
+            log("gamepla textrue ok.");
+            this->schedule(schedule_selector(Loading::delayCall),1,1,3);
+            //float interval, unsigned int repeat, float delay
+            break;
+    }
+    
+}
+
+void Loading::delayCall(float dt)
+{
+    //auto sc = HomeMenuLayer::createScene();
+    //Director::getInstance()->replaceScene(sc);
+}
+
