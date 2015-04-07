@@ -97,6 +97,9 @@ bool Loading::init()
     //cache end
     
     
+    //audio
+    _loadingAudioThread = new std::thread(&Loading::loadingAudio,this);
+
     
     return true;
 }
@@ -131,4 +134,28 @@ void Loading::delayCall(float dt)
     //auto sc = HomeMenuLayer::createScene();
     //Director::getInstance()->replaceScene(sc);
 }
+
+
+void Loading::loadingAudio()
+{
+    log("loadAudio");
+    //初始化 音乐
+    SimpleAudioEngine::getInstance()->preloadBackgroundMusic(bg_music_1);
+    SimpleAudioEngine::getInstance()->preloadBackgroundMusic(bg_music_2);
+    //初始化音效  TODO  预处理后没有声音，移植的时候需要测试。
+    //SimpleAudioEngine::getInstance()->preloadEffect(sound_1);
+    
+}
+
+
+void Loading::onExit()
+{
+    Layer::onExit();
+    _loadingAudioThread->join();
+    CC_SAFE_DELETE(_loadingAudioThread);
+    SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("texture/loading_texture.plist");
+    Director::getInstance()->getTextureCache()->removeTextureForKey("texture/loading_texture.png");
+    this->unschedule(schedule_selector(HelloWorld::delayCall));
+}
+
 

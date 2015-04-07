@@ -18,6 +18,11 @@
 class Loading : public cocos2d::Layer
 {
 private:
+    //audio
+    std::thread* _loadingAudioThread;
+    void loadingAudio();
+    
+    //texure cache
     void delayCall(float dt);
     void loadingTextureCallBack(cocos2d::Texture2D* texture);
     int m_nNumberOfLoaded;
@@ -28,7 +33,7 @@ public:
     
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
     virtual bool init();
-
+    virtual void onExit();
     
     // implement the "static create()" method manually
     CREATE_FUNC(Loading);
