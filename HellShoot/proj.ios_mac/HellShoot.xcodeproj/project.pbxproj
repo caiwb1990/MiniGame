@@ -13,6 +13,7 @@
 		0E6BBF551AD2E69100FB81F7 /* LoadingScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E6BBF531AD2E69100FB81F7 /* LoadingScene.cpp */; };
 		0E6BBF581AD4148500FB81F7 /* HomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E6BBF561AD4148500FB81F7 /* HomeScene.cpp */; };
 		0E6BBF5B1AD419EE00FB81F7 /* SettingScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E6BBF591AD419EE00FB81F7 /* SettingScene.cpp */; };
+		0E6BBF5E1AD42E9C00FB81F7 /* HelpScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E6BBF5C1AD42E9C00FB81F7 /* HelpScene.cpp */; };
 		0EC2363E1ACC4FC5009C44B4 /* hd in Resources */ = {isa = PBXBuildFile; fileRef = 0EC2363D1ACC4FC5009C44B4 /* hd */; };
 		0EC236421ACD9256009C44B4 /* HellcUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EC236401ACD9256009C44B4 /* HellcUtils.cpp */; };
 		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
@@ -119,6 +120,8 @@
 		0E6BBF571AD4148500FB81F7 /* HomeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScene.h; sourceTree = "<group>"; };
 		0E6BBF591AD419EE00FB81F7 /* SettingScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SettingScene.cpp; sourceTree = "<group>"; };
 		0E6BBF5A1AD419EE00FB81F7 /* SettingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingScene.h; sourceTree = "<group>"; };
+		0E6BBF5C1AD42E9C00FB81F7 /* HelpScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelpScene.cpp; sourceTree = "<group>"; };
+		0E6BBF5D1AD42E9C00FB81F7 /* HelpScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpScene.h; sourceTree = "<group>"; };
 		0EC2363D1ACC4FC5009C44B4 /* hd */ = {isa = PBXFileReference; lastKnownFileType = folder; path = hd; sourceTree = "<group>"; };
 		0EC236401ACD9256009C44B4 /* HellcUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HellcUtils.cpp; sourceTree = "<group>"; };
 		0EC236411ACD9256009C44B4 /* HellcUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HellcUtils.h; sourceTree = "<group>"; };
@@ -313,6 +316,8 @@
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				0E6BBF561AD4148500FB81F7 /* HomeScene.cpp */,
 				0E6BBF571AD4148500FB81F7 /* HomeScene.h */,
+				0E6BBF5C1AD42E9C00FB81F7 /* HelpScene.cpp */,
+				0E6BBF5D1AD42E9C00FB81F7 /* HelpScene.h */,
 				0E6BBF591AD419EE00FB81F7 /* SettingScene.cpp */,
 				0E6BBF5A1AD419EE00FB81F7 /* SettingScene.h */,
 				0E6BBF531AD2E69100FB81F7 /* LoadingScene.cpp */,
@@ -529,6 +534,7 @@
 				0E6BBF521AD2E43100FB81F7 /* MenuBaseLayer.cpp in Sources */,
 				0EC236421ACD9256009C44B4 /* HellcUtils.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				0E6BBF5E1AD42E9C00FB81F7 /* HelpScene.cpp in Sources */,
 				0E6BBF5B1AD419EE00FB81F7 /* SettingScene.cpp in Sources */,
 				0E6BBF551AD2E69100FB81F7 /* LoadingScene.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
