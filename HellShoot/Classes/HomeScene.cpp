@@ -10,6 +10,8 @@
 
 #include "SettingScene.h"
 #include "HelpScene.h"
+#include "GameScene.h"
+
 USING_NS_CC;
 
 enum
@@ -117,7 +119,7 @@ void HomeMenuLayer::menuItemCallback(cocos2d::Ref *sender)
     switch(menuItem->getTag())
     {
         case kTagMenuItemStart:
-           // tsc = TransitionFade::create(1.0f, GamePlayLayer::createScene());
+            tsc = TransitionFade::create(1.0f, GamePlayLayer::createScene());
             
             break;
         case kTagMenuItemHelp:

@@ -14,6 +14,8 @@
 		0E6BBF581AD4148500FB81F7 /* HomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E6BBF561AD4148500FB81F7 /* HomeScene.cpp */; };
 		0E6BBF5B1AD419EE00FB81F7 /* SettingScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E6BBF591AD419EE00FB81F7 /* SettingScene.cpp */; };
 		0E6BBF5E1AD42E9C00FB81F7 /* HelpScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E6BBF5C1AD42E9C00FB81F7 /* HelpScene.cpp */; };
+		0E6BBF611AD4339300FB81F7 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E6BBF5F1AD4339300FB81F7 /* GameScene.cpp */; };
+		0E6BBF631AD434BB00FB81F7 /* particle in Resources */ = {isa = PBXBuildFile; fileRef = 0E6BBF621AD434BB00FB81F7 /* particle */; };
 		0EC2363E1ACC4FC5009C44B4 /* hd in Resources */ = {isa = PBXBuildFile; fileRef = 0EC2363D1ACC4FC5009C44B4 /* hd */; };
 		0EC236421ACD9256009C44B4 /* HellcUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EC236401ACD9256009C44B4 /* HellcUtils.cpp */; };
 		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
@@ -122,6 +124,9 @@
 		0E6BBF5A1AD419EE00FB81F7 /* SettingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingScene.h; sourceTree = "<group>"; };
 		0E6BBF5C1AD42E9C00FB81F7 /* HelpScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelpScene.cpp; sourceTree = "<group>"; };
 		0E6BBF5D1AD42E9C00FB81F7 /* HelpScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpScene.h; sourceTree = "<group>"; };
+		0E6BBF5F1AD4339300FB81F7 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
+		0E6BBF601AD4339300FB81F7 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		0E6BBF621AD434BB00FB81F7 /* particle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = particle; sourceTree = "<group>"; };
 		0EC2363D1ACC4FC5009C44B4 /* hd */ = {isa = PBXFileReference; lastKnownFileType = folder; path = hd; sourceTree = "<group>"; };
 		0EC236401ACD9256009C44B4 /* HellcUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HellcUtils.cpp; sourceTree = "<group>"; };
 		0EC236411ACD9256009C44B4 /* HellcUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HellcUtils.h; sourceTree = "<group>"; };
@@ -296,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				0E6BBF4B1AD2DFEF00FB81F7 /* utf8_char.plist */,
+				0E6BBF621AD434BB00FB81F7 /* particle */,
 				0E6BBF4E1AD2E10C00FB81F7 /* sound */,
 				521A8EA819F11F5000D177D7 /* fonts */,
 				3EACC98E19EE6D4300EB3C5E /* res */,
@@ -314,6 +320,8 @@
 				0E6BBF4D1AD2E0D500FB81F7 /* HellcHeader.h */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
+				0E6BBF5F1AD4339300FB81F7 /* GameScene.cpp */,
+				0E6BBF601AD4339300FB81F7 /* GameScene.h */,
 				0E6BBF561AD4148500FB81F7 /* HomeScene.cpp */,
 				0E6BBF571AD4148500FB81F7 /* HomeScene.h */,
 				0E6BBF5C1AD42E9C00FB81F7 /* HelpScene.cpp */,
@@ -491,6 +499,7 @@
 				0E6BBF4F1AD2E10C00FB81F7 /* sound in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
+				0E6BBF631AD434BB00FB81F7 /* particle in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
@@ -539,6 +548,7 @@
 				0E6BBF551AD2E69100FB81F7 /* LoadingScene.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				0E6BBF581AD4148500FB81F7 /* HomeScene.cpp in Sources */,
+				0E6BBF611AD4339300FB81F7 /* GameScene.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
