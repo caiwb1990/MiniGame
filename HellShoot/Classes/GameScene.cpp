@@ -47,6 +47,22 @@ bool GamePlayLayer::init()
 }
 
 
+void GamePlayLayer::onExit()
+{
+    Layer::onExit();
+   
+    
+    auto nodes = this->getChildren();
+    for (const auto& node : nodes) {
+        //如果是背景不进行remove
+        if (node->getTag() != GameSceneNodeBatchTagBackground)
+        {
+            this->removeChild(node);
+        }
+    }
+}
+
+
 //初始化游戏背景.
 void GamePlayLayer::initBG()
 {
