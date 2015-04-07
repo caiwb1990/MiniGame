@@ -8,6 +8,8 @@
 
 #include "HomeScene.h"
 
+#include "SettingScene.h"
+
 USING_NS_CC;
 
 enum
@@ -123,7 +125,7 @@ void HomeMenuLayer::menuItemCallback(cocos2d::Ref *sender)
            
             break;
         case kTagMenuItemSetting:
-            //tsc = TransitionFade::create(1.0f, SettingLayer::createScene());
+            tsc = TransitionFade::create(1.0f, SettingLayer::createScene());
             
             break;
     }
