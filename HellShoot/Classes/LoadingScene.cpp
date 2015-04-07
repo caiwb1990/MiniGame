@@ -7,6 +7,7 @@
 //
 
 #include "LoadingScene.h"
+#include "HomeScene.h"
 
 USING_NS_CC;
 
@@ -131,8 +132,8 @@ void Loading::loadingTextureCallBack(Texture2D *texture)
 
 void Loading::delayCall(float dt)
 {
-    //auto sc = HomeMenuLayer::createScene();
-    //Director::getInstance()->replaceScene(sc);
+    auto sc = HomeMenuLayer::createScene();
+    Director::getInstance()->replaceScene(sc);
 }
 
 
