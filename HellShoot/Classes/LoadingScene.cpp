@@ -155,7 +155,7 @@ void Loading::onExit()
     CC_SAFE_DELETE(_loadingAudioThread);
     SpriteFrameCache::getInstance()->removeSpriteFramesFromFile("texture/loading_texture.plist");
     Director::getInstance()->getTextureCache()->removeTextureForKey("texture/loading_texture.png");
-    this->unschedule(schedule_selector(HelloWorld::delayCall));
+    this->unschedule(schedule_selector(Loading::delayCall));
 }
 
 
