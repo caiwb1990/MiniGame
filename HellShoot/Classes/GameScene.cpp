@@ -7,10 +7,13 @@
 //
 
 #include "GameScene.h"
+#include "Enemy.h"
 
 USING_NS_CC;
 
 #define GameSceneNodeBatchTagBackground				800
+
+#define GameSceneNodeBatchTagEnemy					903
 
 Scene* GamePlayLayer::createScene()
 {
@@ -61,6 +64,28 @@ void GamePlayLayer::onEnter()
     auto pauseMenu = Menu::create(pauseMenuItem, NULL);
     pauseMenu->setPosition(Vec2(30, visibleSize.height - 28));
     this->addChild(pauseMenu,20,999);
+    
+    //添加陨石1.
+    auto stone1 = Enemy::createWithEnemyTypes(EnemyTypeStone);
+    stone1->setVelocity(Vec2(0, -100));
+    this->addChild(stone1, 10 , GameSceneNodeBatchTagEnemy);
+    
+    //添加行星.
+    auto planet = Enemy::createWithEnemyTypes(EnemyTypePlanet);
+    planet->setVelocity(Vec2(0, -50));
+    this->addChild(planet, 10 , GameSceneNodeBatchTagEnemy);
+    
+    //添加敌机1.
+    auto enemyFighter1 = Enemy::createWithEnemyTypes(EnemyTypeEnemy1);
+    enemyFighter1->setVelocity(Vec2(0, -80));
+    this->addChild(enemyFighter1, 10 , GameSceneNodeBatchTagEnemy);
+    
+    //添加敌机2.
+    auto enemyFighter2 = Enemy::createWithEnemyTypes(EnemyTypeEnemy2);
+    enemyFighter2->setVelocity(Vec2(0, -100));
+    this->addChild(enemyFighter2, 10 , GameSceneNodeBatchTagEnemy);
+    
+
     
 }
 
