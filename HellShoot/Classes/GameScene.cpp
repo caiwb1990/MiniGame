@@ -49,8 +49,6 @@ bool GamePlayLayer::init()
     return true;
 }
 
-
-
 void GamePlayLayer::onEnter()
 {
     Layer::onEnter();
