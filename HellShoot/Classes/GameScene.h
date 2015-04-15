@@ -13,10 +13,11 @@
 
 #include "HellcHeader.h"
 
+class Fighter;
 class GamePlayLayer : public cocos2d::Layer
 {
 private:
-    
+    Fighter* fighter;
     cocos2d::Menu* menu;
     
 public:

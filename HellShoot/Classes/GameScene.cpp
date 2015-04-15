@@ -8,11 +8,13 @@
 
 #include "GameScene.h"
 #include "Enemy.h"
+#include "Fighter.h"
 
 USING_NS_CC;
 
 #define GameSceneNodeBatchTagBackground				800
 
+#define GameSceneNodeTagFighter						900
 #define GameSceneNodeBatchTagEnemy					903
 
 Scene* GamePlayLayer::createScene()
@@ -83,8 +85,13 @@ void GamePlayLayer::onEnter()
     enemyFighter2->setVelocity(Vec2(0, -100));
     this->addChild(enemyFighter2, 10 , GameSceneNodeBatchTagEnemy);
     
-
+    //玩家的飞机.
+    this->fighter = Fighter::createWithSpriteFrameName("gameplay.fighter.png");
+    this->fighter->setHitPoints(5);
+    this->fighter->setPosition(Vec2(visibleSize.width / 2, 70));
+    this->addChild(this->fighter, 10, GameSceneNodeTagFighter);
     
+
 }
 
 
