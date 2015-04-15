@@ -19,6 +19,7 @@
 		0E6BBF661AD6D96D00FB81F7 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E6BBF641AD6D96D00FB81F7 /* Enemy.cpp */; };
 		0EC2363E1ACC4FC5009C44B4 /* hd in Resources */ = {isa = PBXBuildFile; fileRef = 0EC2363D1ACC4FC5009C44B4 /* hd */; };
 		0EC236421ACD9256009C44B4 /* HellcUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EC236401ACD9256009C44B4 /* HellcUtils.cpp */; };
+		0EF581371ADEBFA000E8F7DC /* Fighter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EF581351ADEBFA000E8F7DC /* Fighter.cpp */; };
 		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -133,6 +134,8 @@
 		0EC2363D1ACC4FC5009C44B4 /* hd */ = {isa = PBXFileReference; lastKnownFileType = folder; path = hd; sourceTree = "<group>"; };
 		0EC236401ACD9256009C44B4 /* HellcUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HellcUtils.cpp; sourceTree = "<group>"; };
 		0EC236411ACD9256009C44B4 /* HellcUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HellcUtils.h; sourceTree = "<group>"; };
+		0EF581351ADEBFA000E8F7DC /* Fighter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Fighter.cpp; sourceTree = "<group>"; };
+		0EF581361ADEBFA000E8F7DC /* Fighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fighter.h; sourceTree = "<group>"; };
 		1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -327,6 +330,8 @@
 				0E6BBF601AD4339300FB81F7 /* GameScene.h */,
 				0E6BBF641AD6D96D00FB81F7 /* Enemy.cpp */,
 				0E6BBF651AD6D96D00FB81F7 /* Enemy.h */,
+				0EF581351ADEBFA000E8F7DC /* Fighter.cpp */,
+				0EF581361ADEBFA000E8F7DC /* Fighter.h */,
 				0E6BBF561AD4148500FB81F7 /* HomeScene.cpp */,
 				0E6BBF571AD4148500FB81F7 /* HomeScene.h */,
 				0E6BBF5C1AD42E9C00FB81F7 /* HelpScene.cpp */,
@@ -546,6 +551,7 @@
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				0E6BBF521AD2E43100FB81F7 /* MenuBaseLayer.cpp in Sources */,
+				0EF581371ADEBFA000E8F7DC /* Fighter.cpp in Sources */,
 				0EC236421ACD9256009C44B4 /* HellcUtils.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				0E6BBF5E1AD42E9C00FB81F7 /* HelpScene.cpp in Sources */,
