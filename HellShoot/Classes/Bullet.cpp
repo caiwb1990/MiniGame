@@ -32,8 +32,24 @@ Bullet* Bullet::createWithSpriteFrameName(const char* spriteFrameName)
     return nullptr;
 }
 
+
 void Bullet::shootBulletFromFighter(Fighter* fighter)
 {
     this->setPosition(fighter->getPosition() + Vec2(0, fighter->getContentSize().height/2));
     this->setVisible(true);
+    this->unscheduleUpdate();
+    this->scheduleUpdate();
+    
+}
+
+void Bullet::update(float dt)
+{
+    Size screenSize = Director::getInstance()->getVisibleSize();
+    this->setPosition(Vec2(this->getPosition() + velocity *dt));
+    if (this->getPosition().y > screenSize.height) {
+        //log("isVisible = %d",this->isVisible());
+        this->setVisible(false);
+        this->unscheduleUpdate();
+        this->removeFromParent();
+    }    
 }

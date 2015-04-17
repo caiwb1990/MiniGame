@@ -21,5 +21,8 @@ class Bullet : public cocos2d::Sprite
     
     void shootBulletFromFighter(Fighter* fighter);
     
+    
+    virtual void update(float dt);
+    
 };
 #endif /* defined(__HellShoot__Bullet__) */
