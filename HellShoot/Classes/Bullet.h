@@ -11,12 +11,15 @@
 
 
 #include "cocos2d.h"
+#include "Fighter.h"
 
 class Bullet : public cocos2d::Sprite
 {
-
+    CC_SYNTHESIZE(cocos2d::Vec2, velocity, Velocity);
     public :
-
     static Bullet* createWithSpriteFrameName(const char* spriteFrameName);
+    
+    void shootBulletFromFighter(Fighter* fighter);
+    
 };
 #endif /* defined(__HellShoot__Bullet__) */
