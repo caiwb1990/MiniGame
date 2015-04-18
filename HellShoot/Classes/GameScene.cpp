@@ -165,7 +165,6 @@ void GamePlayLayer::menuResumeCallback(Ref* pSender)
 void GamePlayLayer::onExit()
 {
     Layer::onExit();
-   
     
     auto nodes = this->getChildren();
     for (const auto& node : nodes) {
