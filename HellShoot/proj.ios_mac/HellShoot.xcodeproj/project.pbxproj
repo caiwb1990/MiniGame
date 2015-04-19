@@ -18,6 +18,7 @@
 		0E6BBF631AD434BB00FB81F7 /* particle in Resources */ = {isa = PBXBuildFile; fileRef = 0E6BBF621AD434BB00FB81F7 /* particle */; };
 		0E6BBF661AD6D96D00FB81F7 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E6BBF641AD6D96D00FB81F7 /* Enemy.cpp */; };
 		0E8775AE1AE0345900EFDA98 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E8775AC1AE0345900EFDA98 /* Bullet.cpp */; };
+		0EB975181AE398A9003AEA35 /* GameoverScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EB975161AE398A9003AEA35 /* GameoverScene.cpp */; };
 		0EC2363E1ACC4FC5009C44B4 /* hd in Resources */ = {isa = PBXBuildFile; fileRef = 0EC2363D1ACC4FC5009C44B4 /* hd */; };
 		0EC236421ACD9256009C44B4 /* HellcUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EC236401ACD9256009C44B4 /* HellcUtils.cpp */; };
 		0EF581371ADEBFA000E8F7DC /* Fighter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0EF581351ADEBFA000E8F7DC /* Fighter.cpp */; };
@@ -134,6 +135,8 @@
 		0E6BBF651AD6D96D00FB81F7 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
 		0E8775AC1AE0345900EFDA98 /* Bullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bullet.cpp; sourceTree = "<group>"; };
 		0E8775AD1AE0345900EFDA98 /* Bullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bullet.h; sourceTree = "<group>"; };
+		0EB975161AE398A9003AEA35 /* GameoverScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameoverScene.cpp; sourceTree = "<group>"; };
+		0EB975171AE398A9003AEA35 /* GameoverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameoverScene.h; sourceTree = "<group>"; };
 		0EC2363D1ACC4FC5009C44B4 /* hd */ = {isa = PBXFileReference; lastKnownFileType = folder; path = hd; sourceTree = "<group>"; };
 		0EC236401ACD9256009C44B4 /* HellcUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HellcUtils.cpp; sourceTree = "<group>"; };
 		0EC236411ACD9256009C44B4 /* HellcUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HellcUtils.h; sourceTree = "<group>"; };
@@ -337,6 +340,8 @@
 				0EF581361ADEBFA000E8F7DC /* Fighter.h */,
 				0E8775AC1AE0345900EFDA98 /* Bullet.cpp */,
 				0E8775AD1AE0345900EFDA98 /* Bullet.h */,
+				0EB975161AE398A9003AEA35 /* GameoverScene.cpp */,
+				0EB975171AE398A9003AEA35 /* GameoverScene.h */,
 				0E6BBF561AD4148500FB81F7 /* HomeScene.cpp */,
 				0E6BBF571AD4148500FB81F7 /* HomeScene.h */,
 				0E6BBF5C1AD42E9C00FB81F7 /* HelpScene.cpp */,
@@ -559,6 +564,7 @@
 				0EF581371ADEBFA000E8F7DC /* Fighter.cpp in Sources */,
 				0EC236421ACD9256009C44B4 /* HellcUtils.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				0EB975181AE398A9003AEA35 /* GameoverScene.cpp in Sources */,
 				0E6BBF5E1AD42E9C00FB81F7 /* HelpScene.cpp in Sources */,
 				0E6BBF5B1AD419EE00FB81F7 /* SettingScene.cpp in Sources */,
 				0E6BBF661AD6D96D00FB81F7 /* Enemy.cpp in Sources */,
