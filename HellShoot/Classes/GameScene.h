@@ -17,10 +17,14 @@ class Fighter;
 class GamePlayLayer : public cocos2d::Layer
 {
 private:
+    //plane
     Fighter* fighter;
+    //menu
     cocos2d::Menu* menu;
     
+    //touch
     cocos2d::EventListenerTouchOneByOne *touchFighterlistener;
+    
     
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer

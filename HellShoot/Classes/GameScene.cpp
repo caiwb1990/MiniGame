@@ -7,21 +7,8 @@
 //
 
 #include "GameScene.h"
-#include "Enemy.h"
-#include "Fighter.h"
-#include "Bullet.h"
 
 USING_NS_CC;
-
-#define GameSceneNodeBatchTagBackground				800
-
-#define GameSceneNodeTagFighter						900
-
-#define GameSceneNodeBatchTagBullet					902
-#define GameSceneNodeBatchTagEnemy					903
-
-
-#define GameSceneBulletVelocity						300
 
 Scene* GamePlayLayer::createScene()
 {
