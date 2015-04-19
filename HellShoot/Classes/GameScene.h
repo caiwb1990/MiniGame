@@ -25,6 +25,9 @@ private:
     //touch
     cocos2d::EventListenerTouchOneByOne *touchFighterlistener;
     
+    //contact
+    cocos2d::EventListenerPhysicsContact *contactListener;
+    
     //score
     int score;
     

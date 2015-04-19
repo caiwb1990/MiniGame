@@ -117,12 +117,61 @@ void GamePlayLayer::onEnter()
     this->schedule(schedule_selector(GamePlayLayer::shootBullet), 0.5f);
     
     
+    //contact
+    contactListener = EventListenerPhysicsContact::create();
+    contactListener->onContactBegin = [this](PhysicsContact& contact)
+    {
+        auto spriteA = contact.getShapeA()->getBody()->getNode();
+        auto spriteB = contact.getShapeB()->getBody()->getNode();
+
+        ////////////////////////////检测 炮弹与敌人的碰撞 start////////////////////////////////
+        Node* enemy2 = nullptr;
+        
+        if (spriteA->getTag() == GameSceneNodeBatchTagBullet &&
+            spriteB->getTag() == GameSceneNodeBatchTagEnemy)
+        {
+            //不可见的炮弹不发生碰撞
+            if (!spriteA->isVisible())
+                return false;
+            //使得炮弹消失
+            spriteA->setVisible(false);
+            enemy2 = spriteB;
+        }
+        if (spriteA->getTag() == GameSceneNodeBatchTagEnemy
+            && spriteB->getTag() == GameSceneNodeBatchTagBullet)
+        {
+            //不可见的炮弹不发生碰撞
+            if (!spriteB->isVisible())
+                return false;
+            //使得炮弹消失
+            spriteB->setVisible(false);
+            enemy2 = spriteA;
+        }
+        if (enemy2 != nullptr)
+        {
+            //发生碰撞
+            
+            
+            
+            return false;
+        }
+        /////////////////////////检测 炮弹与敌人的碰撞 end/////////////////////////////////////
+        
+        return false;
+    };	
+    
+    
+    eventDispatcher->addEventListenerWithFixedPriority(contactListener,1); 
+    
+
+    
+    
     
     //score
+    this->score = 0;
     this->updateStatusBarScore();
     //plane
     this->updateStatusBarFighter();
-
 }
 
 void GamePlayLayer::updateStatusBarFighter()
