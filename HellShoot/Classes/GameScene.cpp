@@ -441,6 +441,15 @@ void GamePlayLayer::handleFighterCollidingWithEnemy(Enemy* enemy)
     if (UserDefault::getInstance()->getBoolForKey(SOUND_KEY)) {
         SimpleAudioEngine::getInstance()->playEffect(sound_2);
     }
+    //eff
+    Node *node = this->getChildByTag(GameSceneNodeTagExplosionParticleSystem);
+    if (node) {
+        this->removeChild(node);
+    }
+    ParticleSystem *explosion = ParticleSystemQuad::create("particle/explosion.plist");
+    explosion->setPosition(fighter->getPosition());
+    this->addChild(explosion, 2, GameSceneNodeTagExplosionParticleSystem);
+
     
     //设置敌人消失
     enemy->setVisible(false);
