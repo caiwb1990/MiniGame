@@ -9,13 +9,19 @@
 #include "GameScene.h"
 #include "Enemy.h"
 #include "Fighter.h"
+#include "Bullet.h"
 
 USING_NS_CC;
 
 #define GameSceneNodeBatchTagBackground				800
 
 #define GameSceneNodeTagFighter						900
+
+#define GameSceneNodeBatchTagBullet					902
 #define GameSceneNodeBatchTagEnemy					903
+
+
+#define GameSceneBulletVelocity						300
 
 Scene* GamePlayLayer::createScene()
 {
@@ -91,7 +97,21 @@ void GamePlayLayer::onEnter()
     this->fighter->setPosition(Vec2(visibleSize.width / 2, 70));
     this->addChild(this->fighter, 10, GameSceneNodeTagFighter);
     
+    
+    //shoot bullet
+    this->schedule(schedule_selector(GamePlayLayer::shootBullet), 0.5f);
 
+}
+
+//飞机发射炮弹
+void GamePlayLayer::shootBullet(float dt)
+{
+    if (fighter && fighter->isVisible()) {
+        Bullet* bullet = Bullet::createWithSpriteFrameName("gameplay.bullet.png");
+        bullet->setVelocity(Vec2(0, GameSceneBulletVelocity));
+        this->addChild(bullet, 0, GameSceneNodeBatchTagBullet);
+        bullet->shootBulletFromFighter(fighter);
+    }
 }
 
 

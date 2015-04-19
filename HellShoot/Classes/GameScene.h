@@ -35,6 +35,7 @@ public:
     void menuResumeCallback(cocos2d::Ref* pSender);
     
     void initBG();
+    void shootBullet(float dt);
     
     
     // implement the "static create()" method manually
