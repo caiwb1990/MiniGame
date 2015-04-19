@@ -114,7 +114,7 @@ void GamePlayLayer::onEnter()
     eventDispatcher->addEventListenerWithSceneGraphPriority(touchFighterlistener, this->fighter);
     
     //shoot bullet
-    this->schedule(schedule_selector(GamePlayLayer::shootBullet), 0.5f);
+    this->schedule(schedule_selector(GamePlayLayer::shootBullet), 0.4f);
     
     
     //contact
@@ -150,8 +150,7 @@ void GamePlayLayer::onEnter()
         if (enemy2 != nullptr)
         {
             //发生碰撞
-            
-            
+            this->handleBulletCollidingWithEnemy((Enemy*)enemy2);
             
             return false;
         }
@@ -169,6 +168,7 @@ void GamePlayLayer::onEnter()
     
     //score
     this->score = 0;
+    this->scorePlaceholder = 0;
     this->updateStatusBarScore();
     //plane
     this->updateStatusBarFighter();
@@ -345,5 +345,49 @@ void GamePlayLayer::initBG()
     FiniteTimeAction * ac4 = ((FiniteTimeAction *)ac3)->reverse();
     ActionInterval * as2 = Sequence::create(ac3, ac4, NULL);
     sprite2->runAction(RepeatForever::create(EaseExponentialInOut::create(as2)));
+    
+}
+
+
+//炮弹与敌人的碰撞检测
+void GamePlayLayer::handleBulletCollidingWithEnemy(Enemy* enemy)
+{
+    enemy->setHitPoints(enemy->getHitPoints() - 1);
+    
+    if (enemy->getHitPoints() <= 0)
+    {
+    
+        switch (enemy->getEnemyType())
+        {
+            case EnemyTypeStone:
+                score += EnemyStone_Score;
+                scorePlaceholder+= EnemyStone_Score;
+                break;
+            case EnemyTypeEnemy1:
+                score += Enemy1_Score;
+                scorePlaceholder+= Enemy1_Score;
+                break;
+            case EnemyTypeEnemy2:
+                score += Enemy2_Score;
+                scorePlaceholder+= Enemy2_Score;
+                break;
+            case EnemyTypePlanet:
+                score += EnemyPlanet_Score;
+                scorePlaceholder+= EnemyPlanet_Score;
+                break;
+        }
+        //每次获得1000分数，生命值 加一，scorePlaceholder恢复0.
+        if (scorePlaceholder >= 1000)
+        {
+            fighter->setHitPoints(fighter->getHitPoints() + 1);
+            this->updateStatusBarFighter();
+            scorePlaceholder-=1000;
+        }
+        
+        this->updateStatusBarScore();
+        //设置敌人消失
+        enemy->setVisible(false);
+        enemy->spawn();
+    }
     
 }

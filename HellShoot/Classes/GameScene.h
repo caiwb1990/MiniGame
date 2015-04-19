@@ -30,6 +30,7 @@ private:
     
     //score
     int score;
+    int scorePlaceholder;
     
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
@@ -51,6 +52,8 @@ public:
     
     void updateStatusBarScore();
     void updateStatusBarFighter();
+    
+    void handleBulletCollidingWithEnemy(Enemy* enemy);
     
     // implement the "static create()" method manually
     CREATE_FUNC(GamePlayLayer);

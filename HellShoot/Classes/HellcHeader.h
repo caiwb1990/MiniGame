@@ -53,6 +53,15 @@
 #define GameSceneNodeTagStatusBarScore				303
 
 
+//scores
+typedef enum
+{
+    EnemyStone_Score = 5,
+    Enemy1_Score = 10,
+    Enemy2_Score = 15,
+    EnemyPlanet_Score = 20
+} EnemyScores;
+
 
 using namespace CocosDenshion;
 
