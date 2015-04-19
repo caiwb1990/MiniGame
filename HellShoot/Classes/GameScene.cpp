@@ -114,7 +114,7 @@ void GamePlayLayer::onEnter()
     eventDispatcher->addEventListenerWithSceneGraphPriority(touchFighterlistener, this->fighter);
     
     //shoot bullet
-    this->schedule(schedule_selector(GamePlayLayer::shootBullet), 0.4f);
+    this->schedule(schedule_selector(GamePlayLayer::shootBullet), 0.3f);
     
     
     //contact
@@ -356,7 +356,17 @@ void GamePlayLayer::handleBulletCollidingWithEnemy(Enemy* enemy)
     
     if (enemy->getHitPoints() <= 0)
     {
-    
+        //eff
+        Node *node = this->getChildByTag(GameSceneNodeTagExplosionParticleSystem);
+        if (node) {
+            this->removeChild(node);
+        }
+        ParticleSystem *explosion = ParticleSystemQuad::create("particle/explosion.plist");
+        explosion->setPosition(enemy->getPosition());
+        this->addChild(explosion, 2, GameSceneNodeTagExplosionParticleSystem);
+        
+        
+        //score
         switch (enemy->getEnemyType())
         {
             case EnemyTypeStone:

@@ -43,6 +43,7 @@
 #define GameSceneNodeBatchTagBackground				800
 
 #define GameSceneNodeTagFighter						900
+#define GameSceneNodeTagExplosionParticleSystem		901
 #define GameSceneNodeBatchTagBullet					902
 #define GameSceneNodeBatchTagEnemy					903
 
