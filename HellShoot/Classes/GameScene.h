@@ -25,6 +25,8 @@ private:
     //touch
     cocos2d::EventListenerTouchOneByOne *touchFighterlistener;
     
+    //score
+    int score;
     
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
@@ -43,6 +45,7 @@ public:
     void initBG();
     void shootBullet(float dt);
     
+    void updateStatusBarScore();
     
     // implement the "static create()" method manually
     CREATE_FUNC(GamePlayLayer);

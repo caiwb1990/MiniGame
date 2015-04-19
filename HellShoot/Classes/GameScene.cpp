@@ -104,7 +104,30 @@ void GamePlayLayer::onEnter()
     
     //shoot bullet
     this->schedule(schedule_selector(GamePlayLayer::shootBullet), 0.5f);
+    
+    
+    
+    //score
+    this->updateStatusBarScore();
 
+}
+
+void GamePlayLayer::updateStatusBarScore()
+{
+    Size visibleSize = Director::getInstance()->getVisibleSize();
+    Node* n = this->getChildByTag(GameSceneNodeTagStatusBarScore);
+    if (n) {
+        this->removeChildByTag(GameSceneNodeTagStatusBarScore);
+    }
+    
+    if (this->score <0)
+        this->score = 0;
+    
+    __String * score = __String::createWithFormat("%d", this->score);
+    auto lblScore = Label::createWithTTF(score->getCString(), "fonts/hanyi.ttf", 18);
+    
+    lblScore->setPosition(Vec2(visibleSize.width / 2, visibleSize.height - 28));
+    this->addChild(lblScore, 20, GameSceneNodeTagStatusBarScore);
 }
 
 //飞机发射炮弹
