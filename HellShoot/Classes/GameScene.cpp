@@ -437,6 +437,11 @@ void GamePlayLayer::handleFighterCollidingWithEnemy(Enemy* enemy)
 {
     Size visibleSize = Director::getInstance()->getVisibleSize();
     
+    //sound
+    if (UserDefault::getInstance()->getBoolForKey(SOUND_KEY)) {
+        SimpleAudioEngine::getInstance()->playEffect(sound_2);
+    }
+    
     //设置敌人消失
     enemy->setVisible(false);
     enemy->spawn();
