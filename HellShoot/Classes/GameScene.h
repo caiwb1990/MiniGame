@@ -55,6 +55,8 @@ public:
     
     void handleBulletCollidingWithEnemy(Enemy* enemy);
     
+    void handleFighterCollidingWithEnemy(Enemy* enemy);
+
     // implement the "static create()" method manually
     CREATE_FUNC(GamePlayLayer);
 };

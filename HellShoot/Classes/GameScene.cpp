@@ -172,7 +172,7 @@ void GamePlayLayer::onEnter()
         if (enemy1 != nullptr)
         {
             //发生碰撞
-           
+            this->handleFighterCollidingWithEnemy((Enemy*)enemy1);
             return false;
         }
         /////////////////////////检测 飞机与敌人的碰撞 end/////////////////////////////////////
@@ -427,6 +427,37 @@ void GamePlayLayer::handleBulletCollidingWithEnemy(Enemy* enemy)
         //设置敌人消失
         enemy->setVisible(false);
         enemy->spawn();
+    }
+    
+}
+
+
+
+void GamePlayLayer::handleFighterCollidingWithEnemy(Enemy* enemy)
+{
+    Size visibleSize = Director::getInstance()->getVisibleSize();
+    
+    //设置敌人消失
+    enemy->setVisible(false);
+    enemy->spawn();
+    
+    //设置玩家消失
+    fighter->setHitPoints(fighter->getHitPoints() - 1);
+    this->updateStatusBarFighter();
+    
+    //游戏结束
+    if (fighter->getHitPoints() <=0)
+    {
+        log("GameOver");
+        
+        
+        
+    } else {
+        fighter->setPosition(Vec2(visibleSize.width /2, 70));
+        auto ac1 = Show::create();
+        auto ac2 = FadeIn::create(1.0f);
+        auto seq = Sequence::create(ac1,ac2, NULL);
+        fighter->runAction(seq);
     }
     
 }
