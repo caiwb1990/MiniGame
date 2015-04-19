@@ -356,6 +356,11 @@ void GamePlayLayer::handleBulletCollidingWithEnemy(Enemy* enemy)
     
     if (enemy->getHitPoints() <= 0)
     {
+        //sound
+        if (UserDefault::getInstance()->getBoolForKey(SOUND_KEY)) {
+            SimpleAudioEngine::getInstance()->playEffect(sound_2);
+        }
+        
         //eff
         Node *node = this->getChildByTag(GameSceneNodeTagExplosionParticleSystem);
         if (node) {
