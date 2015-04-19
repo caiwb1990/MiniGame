@@ -37,6 +37,7 @@ public:
     virtual void onExit();
     
     virtual void onEnter();
+    virtual void onEnterTransitionDidFinish();
     
     void menuPauseCallback(cocos2d::Ref* pSender);
     void menuBackCallback(cocos2d::Ref* pSender);

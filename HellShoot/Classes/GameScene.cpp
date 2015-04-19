@@ -44,6 +44,17 @@ bool GamePlayLayer::init()
     return true;
 }
 
+void GamePlayLayer::onEnterTransitionDidFinish()
+{
+    Layer::onEnterTransitionDidFinish();
+    log("GamePlayLayer onEnterTransitionDidFinish");
+    UserDefault *defaults  = UserDefault::getInstance();
+    if (defaults->getBoolForKey(MUSIC_KEY)) {
+        SimpleAudioEngine::getInstance()->playBackgroundMusic(bg_music_2, true);
+    }
+}
+
+
 void GamePlayLayer::onEnter()
 {
     Layer::onEnter();
