@@ -39,6 +39,7 @@
 #include "Enemy.h"
 #include "Fighter.h"
 #include "Bullet.h"
+#include "GameoverScene.h"
 
 #define GameSceneNodeBatchTagBackground				800
 

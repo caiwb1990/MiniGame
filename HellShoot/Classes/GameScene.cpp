@@ -463,7 +463,12 @@ void GamePlayLayer::handleFighterCollidingWithEnemy(Enemy* enemy)
     if (fighter->getHitPoints() <=0)
     {
         log("GameOver");
+        auto gameOverLayer = GameOverLayer::createWithScore(score);
+        auto gameOverScene = Scene::create();
+        gameOverScene->addChild(gameOverLayer);
         
+        auto tsc = TransitionFade::create(1.0f, gameOverScene);
+        Director::getInstance()->pushScene(tsc);
         
         
     } else {
