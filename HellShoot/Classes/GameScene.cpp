@@ -156,6 +156,30 @@ void GamePlayLayer::onEnter()
         }
         /////////////////////////检测 炮弹与敌人的碰撞 end/////////////////////////////////////
         
+        
+        Node* enemy1 = nullptr;
+        ////////////////////////////检测 飞机与敌人的碰撞 start//////////////////////////////////
+        log("A = %d  ------------ B = %d", spriteA->getTag(), spriteB->getTag());
+        if (spriteA->getTag() == GameSceneNodeTagFighter && spriteB->getTag() == GameSceneNodeBatchTagEnemy)
+        {
+            enemy1 = spriteB;
+        }
+        if (spriteA->getTag() == GameSceneNodeBatchTagEnemy && spriteB->getTag() == GameSceneNodeTagFighter)
+        {
+            enemy1 = spriteA;
+        }
+        
+        if (enemy1 != nullptr)
+        {
+            //发生碰撞
+           
+            return false;
+        }
+        /////////////////////////检测 飞机与敌人的碰撞 end/////////////////////////////////////
+        
+        
+        
+        
         return false;
     };	
     
