@@ -98,6 +98,23 @@ void GamePlayLayer::onEnter()
     this->addChild(this->fighter, 10, GameSceneNodeTagFighter);
     
     
+    //plane touch
+    touchFighterlistener = EventListenerTouchOneByOne::create();
+    touchFighterlistener->setSwallowTouches(true);
+    
+    //move
+    touchFighterlistener->onTouchBegan = [](Touch* touch, Event* event){
+        return true;
+    };
+    
+    touchFighterlistener->onTouchMoved = [](Touch* touch, Event* event){
+        auto target = event->getCurrentTarget();
+        target->setPosition(target->getPosition() + touch->getDelta());
+    };
+    
+    EventDispatcher* eventDispatcher = Director::getInstance()->getEventDispatcher();
+    eventDispatcher->addEventListenerWithSceneGraphPriority(touchFighterlistener, this->fighter);
+    
     //shoot bullet
     this->schedule(schedule_selector(GamePlayLayer::shootBullet), 0.5f);
 
