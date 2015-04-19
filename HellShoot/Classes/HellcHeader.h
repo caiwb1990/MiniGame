@@ -47,6 +47,9 @@
 #define GameSceneNodeBatchTagEnemy					903
 
 #define GameSceneBulletVelocity						300
+
+#define GameSceneNodeTagStatusBarFighterNode		301
+#define GameSceneNodeTagStatusBarLifeNode			302
 #define GameSceneNodeTagStatusBarScore				303
 
 

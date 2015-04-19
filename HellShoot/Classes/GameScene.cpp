@@ -109,9 +109,38 @@ void GamePlayLayer::onEnter()
     
     //score
     this->updateStatusBarScore();
+    //plane
+    this->updateStatusBarFighter();
 
 }
 
+void GamePlayLayer::updateStatusBarFighter()
+{
+    Size visibleSize = Director::getInstance()->getVisibleSize();
+    //先移除上次的精灵
+    Node* n1 = this->getChildByTag(GameSceneNodeTagStatusBarFighterNode);
+    if (n1) {
+        this->removeChildByTag(GameSceneNodeTagStatusBarFighterNode);
+    }
+    Sprite* fg = Sprite::createWithSpriteFrameName("gameplay.life.png");
+    fg->setPosition(Vec2(visibleSize.width - 60, visibleSize.height - 28));
+    this->addChild(fg,20,GameSceneNodeTagStatusBarFighterNode);
+    
+    //添加生命值 x 5
+    Node* n2 = this->getChildByTag(GameSceneNodeTagStatusBarLifeNode);
+    if (n2) {
+        this->removeChildByTag(GameSceneNodeTagStatusBarLifeNode);
+    }
+    if (this->fighter->getHitPoints() < 0)
+        this->fighter->setHitPoints(0);
+    
+    __String * life = __String::createWithFormat("x %d", this->fighter->getHitPoints());
+    auto lblLife = Label::createWithTTF(life->getCString(), "fonts/hanyi.ttf", 18);
+    lblLife->setPosition(fg->getPosition() + Vec2(30, 0));
+    this->addChild(lblLife, 20, GameSceneNodeTagStatusBarLifeNode);
+}
+
+//score
 void GamePlayLayer::updateStatusBarScore()
 {
     Size visibleSize = Director::getInstance()->getVisibleSize();

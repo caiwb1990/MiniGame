@@ -46,6 +46,7 @@ public:
     void shootBullet(float dt);
     
     void updateStatusBarScore();
+    void updateStatusBarFighter();
     
     // implement the "static create()" method manually
     CREATE_FUNC(GamePlayLayer);
